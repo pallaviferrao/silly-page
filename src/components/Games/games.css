@@ -1,0 +1,8 @@
+.games{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3%;
+}
+.games > div{
+    margin: 2%;
+}
