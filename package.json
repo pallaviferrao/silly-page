@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "dev": "webpack serve",
-    "build": "webpack"
+    "build":"webpack --mode production"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
