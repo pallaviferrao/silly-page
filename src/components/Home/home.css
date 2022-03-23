@@ -92,9 +92,22 @@ img{
   align-items: center;
   justify-content: center;
 }
+
+.navigation{
+  color: wheat;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+  gap: 2em;
+  font-family: 'Great Vibes', cursive;
+  margin-left: 2em;
+  margin-top: 1em;
+}
 @media (max-width: 800px) {
   .container{
     font-size: 0.7rem;
+    width:100%;
+    height:100%;
   }
   .row{
     flex-direction: column;
@@ -114,6 +127,8 @@ img{
 @media (max-width: 400px) {
   .container{
     font-size: 0.8rem;
+    width:100%;
+    height:100%;
   }
   .row{
     flex-direction: column;
@@ -130,14 +145,4 @@ img{
     border-radius:50%
   } */
 
-}
-.navigation{
-  color: wheat;
-  display: flex;
-  flex-direction: row;
-  font-size: 1.4rem;
-  gap: 2em;
-  font-family: 'Great Vibes', cursive;
-  margin-left: 2em;
-  margin-top: 1em;
 }
