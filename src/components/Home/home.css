@@ -102,6 +102,7 @@ img{
   .row>div{
     margin-bottom: -2em;
   }
+  
   /* .circle {
     height: 10em;
     width: 10em;
@@ -118,8 +119,8 @@ img{
     flex-direction: column;
    gap: -2%;
   }
-  .row>div{
-    margin-bottom: -2em;
+  .portfolio{
+    margin-top:7em;
   }
   /* .circle {
     height: 10em;
