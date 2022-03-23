@@ -35,7 +35,7 @@ font-family: 'Tangerine', cursive; */
 .container{
   width:100%;
   height:100%;
-  font-size: 1.1rem;;
+  font-size: 1.1rem;
   /* color: wheat; */
 }
 .circle-bg{
@@ -63,7 +63,7 @@ img{
   flex-direction: column;
 }
 .portfolio{
-  margin-top:5%;
+  margin-top:4em;
 }
 .circle>img{
   border-radius:50%
@@ -72,9 +72,16 @@ img{
 .row-overlap > div{
   margin-right: -2%;
 }
-.displayArea{
+.displayArea >h1 {
+  font-family: 'Great Vibes', cursive;
   text-align: center;
-  
+  font-size: 3rem;
+}
+.displayArea{
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .circle-bg{
@@ -91,7 +98,9 @@ img{
   }
   .row{
     flex-direction: column;
-    margin-bottom: -2%;
+  }
+  .row>div{
+    margin-bottom: -2em;
   }
   /* .circle {
     height: 10em;
@@ -109,6 +118,9 @@ img{
     flex-direction: column;
    gap: -2%;
   }
+  .row>div{
+    margin-bottom: -2em;
+  }
   /* .circle {
     height: 10em;
     width: 10em;
@@ -118,11 +130,13 @@ img{
   } */
 
 }
-
 .navigation{
   color: wheat;
   display: flex;
   flex-direction: row;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   gap: 2em;
+  font-family: 'Great Vibes', cursive;
+  margin-left: 2em;
+  margin-top: 1em;
 }
