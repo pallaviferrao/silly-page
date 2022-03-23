@@ -13,7 +13,11 @@ const Portfolio = () => {
       <li>Python</li>
     </ol>
   );
-  const [displayInfo, setDisplayInfo] = useState(<h1>Software Developer</h1>);
+  const [displayInfo, setDisplayInfo] = useState(
+    <div className="displayArea">
+      <h1>Software Developer</h1>
+    </div>
+  );
   const handleSkills = () => {
     setDisplayInfo(skills);
   };
@@ -26,24 +30,51 @@ const Portfolio = () => {
   };
   let navigate = useNavigate();
   return (
-    <div className="yellowbackground">
-      <div className="middleArea">
-        <div>
-          <p className="mainArea">{displayInfo}</p>
-        </div>
-        <div className="picture">
-          <img src={picture}></img>
+    // <div className="yellowbackground">
+    //   <div className="nav">
+    //     <div className="navigation">
+    //       <div className="skills" onClick={handleSkills}>
+    //         Skills
+    //       </div>
+    //       <div className="gamesButton" onClick={handleNavigate}>
+    //         Games
+    //       </div>
+    //       <div className="aboutMe" onClick={handleMe}>
+    //         About me
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className="mid">
+    //     <div className="middleArea">
+    //       <div>
+    //         <p className="mainArea">{displayInfo}</p>
+    //       </div>
+    //       <div className="picture">
+    //         <img src={picture}></img>
+    //       </div>
+    //     </div>
+    //   </div>
+
+    <div className="container">
+      <div className="row">
+        <div className="navigation">
+          <div className="skills" onClick={handleSkills}>
+            Skills
+          </div>
+          <div className="gamesButton" onClick={handleNavigate}>
+            Games
+          </div>
+          <div className="aboutMe" onClick={handleMe}>
+            About me
+          </div>
         </div>
       </div>
-      <div className="navigation">
-        <div className="skills" onClick={handleSkills}>
-          Skills
+      <div className="row row-overlap centre-horizontal portfolio">
+        <div className="circle">
+          <img src={picture} alt="profile picture"></img>
         </div>
-        <div className="gamesButton" onClick={handleNavigate}>
-          Games
-        </div>
-        <div className="aboutMe" onClick={handleMe}>
-          About me
+        <div className="circle circle-bg">
+          <p className="displayArea">{displayInfo}</p>
         </div>
       </div>
     </div>
