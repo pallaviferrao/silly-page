@@ -58,15 +58,15 @@ const Portfolio = () => {
     <div className="container">
       <div className="row">
         <div className="navigation">
-          <div className="skills" onClick={handleSkills}>
+          <a className="skills" onClick={handleSkills}>
             Skills
-          </div>
-          <div className="gamesButton" onClick={handleNavigate}>
+          </a>
+          <a className="gamesButton" onClick={handleNavigate}>
             Games
-          </div>
-          <div className="aboutMe" onClick={handleMe}>
+          </a>
+          <a className="aboutMe" onClick={handleMe}>
             About me
-          </div>
+          </a>
         </div>
       </div>
       <div className="row row-overlap centre-horizontal portfolio">

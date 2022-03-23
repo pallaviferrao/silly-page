@@ -103,6 +103,10 @@ img{
   margin-left: 2em;
   margin-top: 1em;
 }
+ a{
+   color: wheat;
+  text-decoration: none;
+}
 @media (max-width: 800px) {
   .container{
     font-size: 0.7rem;

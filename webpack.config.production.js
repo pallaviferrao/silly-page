@@ -4,7 +4,10 @@ const webpack = require("webpack");
 
 module.exports = {
   mode: "production",
-  entry: "/src/index.js",
+  entry: {
+    vendor: ["semantic-ui-react"],
+    app: "/src/index.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",

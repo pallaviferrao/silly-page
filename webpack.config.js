@@ -4,7 +4,10 @@ const webpack = require("webpack");
 
 const port = process.env.PORT || 3000;
 module.exports = {
-  entry: "/src/index.js",
+  entry: {
+    vendor: ["semantic-ui-react"],
+    app: "/src/index.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
