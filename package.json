@@ -3,7 +3,7 @@
   "packageManager": "yarn@3.2.0",
   "scripts": {
     "start": "webpack serve --mode development",
-    "start-prod": "wnpm install --legacy-peer-depsebpack serve --mode production",
+    "start-prod": "webpack serve --mode production",
     "dev": "webpack serve",
     "build-dev": "webpack",
     "prebuild": "rimraf dist",
@@ -40,6 +40,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "img-optimize-loader": "^1.0.7",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.4.2",
