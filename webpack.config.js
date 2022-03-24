@@ -43,10 +43,18 @@ module.exports = {
         test: /\.(gif|png|jpe?g)$/,
         use: [
           {
-            loader: "file-loader",
+            // loader: "file-loader",
+            // options: {
+            //   name: "[name].[ext]",
+            //   outputPath: "assets/images/",
+            // },
+            loader: "img-optimize-loader",
             options: {
-              name: "[name].[ext]",
-              outputPath: "assets/images/",
+              compress: {
+                // This will take more time and get smaller images.
+                mode: "high", // 'lossless', 'low'
+                // disableOnDevelopment: true,
+              },
             },
           },
         ],

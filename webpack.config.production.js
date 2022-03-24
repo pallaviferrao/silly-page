@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -42,11 +43,21 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g)$/,
         use: [
+          //   {
+          //     loader: "file-loader",
+          //     options: {
+          //       name: "[name].[ext]",
+          //       outputPath: "assets/images/",
+          //     },
+          //   },
           {
-            loader: "file-loader",
+            loader: "img-optimize-loader",
             options: {
-              name: "[name].[ext]",
-              outputPath: "assets/images/",
+              compress: {
+                // This will take more time and get smaller images.
+                mode: "high", // 'lossless', 'low'
+                // disableOnDevelopment: true,
+              },
             },
           },
         ],
@@ -92,6 +103,20 @@ module.exports = {
         },
       },
     },
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ["gifsicle", { interlaced: true }],
+              ["jpegtran", { progressive: true }],
+              ["optipng", { optimizationLevel: 5 }],
+            ],
+          },
+        },
+      }),
+    ],
   },
   performance: {
     hints: false,
