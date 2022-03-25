@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
-import Games from "../Games/Games.jsx";
 import { useNavigate } from "react-router-dom";
 import picture from "../../assets/images/pallavi.png";
 const Portfolio = () => {
-  var myWorker = new Worker("./Worker.js");
   const aboutMe =
     "Hi, I am Pallavi. I am a full stack developer with about 4 years of experience.";
   const skills = (
@@ -14,17 +12,17 @@ const Portfolio = () => {
       <li>Python</li>
     </ol>
   );
-  const [currentSrc, updateSrc] = useState(picture);
+  const [currentSrc, updateSrc] = useState({});
 
-  // useEffect(() => {
-  //   // start loading original image
-  //   const imageToLoad = new Image();
-  //   imageToLoad.src = picture;
-  //   imageToLoad.onload = () => {
-  //     // When image is loaded replace the src and set loading to false
-  //     updateSrc(picture);
-  //   };
-  // }, []);
+  useEffect(() => {
+    // start loading original image
+    const imageToLoad = new Image();
+    imageToLoad.src = picture;
+    imageToLoad.onload = () => {
+      // When image is loaded replace the src and set loading to false
+      updateSrc(picture);
+    };
+  }, []);
   const [displayInfo, setDisplayInfo] = useState(
     <div className="displayArea">
       <h1>Software Developer</h1>
