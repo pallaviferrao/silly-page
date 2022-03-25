@@ -5,6 +5,7 @@ import Portfolio from "./Portfolio.jsx";
 import Games from "../Games/Games.jsx";
 import Intro from "./Intro.jsx";
 import CustomGame from "../CustomGame/CustomGame.jsx";
+import MagicRecipe from "../MagicRecipe/MagicRecipe.jsx";
 function Home() {
   const [page, setPage] = useState(<Intro />);
   setTimeout(() => {
@@ -17,6 +18,7 @@ function Home() {
         <Route path="/" element={page}></Route>
         <Route path="/games" element={<Games />}></Route>
         <Route path="/customGame" element={<CustomGame />}></Route>
+        <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
       </Routes>
     </Router>
   );

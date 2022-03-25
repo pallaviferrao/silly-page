@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -54,9 +55,29 @@ module.exports = {
             loader: "img-optimize-loader",
             options: {
               compress: {
-                // This will take more time and get smaller images.
-                mode: "high", // 'lossless', 'low'
-                // disableOnDevelopment: true,
+                optipng: {
+                  optimizationLevel: 4,
+                },
+                // lossy compression for png. This will generate smaller file than optipng.
+                pngquant: {
+                  quality: [0.2, 0.8],
+                },
+                // Compression for webp.
+                // You can also tranform jpg/png into webp.
+                webp: {
+                  quality: 100,
+                },
+                // Compression for svg.
+                svgo: true,
+                // Compression for gif.
+                gifsicle: {
+                  optimizationLevel: 3,
+                },
+                // Compression for jpg.
+                mozjpeg: {
+                  progressive: true,
+                  quality: 60,
+                },
               },
             },
           },
@@ -116,6 +137,7 @@ module.exports = {
           },
         },
       }),
+      new TerserPlugin(),
     ],
   },
   performance: {

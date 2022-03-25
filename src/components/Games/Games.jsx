@@ -9,6 +9,9 @@ const Games = () => {
   const handleClick = () => {
     navigate("/customGame");
   };
+  const handleClickMagic = () => {
+    navigate("/magicRecipe");
+  };
   return (
     <div className="games">
       <div>
@@ -25,6 +28,21 @@ const Games = () => {
           }}
         ></WhiteCard>
       </div>
+      <div>
+        <WhiteCard
+          render={() => {
+            return (
+              <Card
+                title="Magic Recipes"
+                description="All about cooking"
+                buttonTitle="Play game"
+                handleClick={handleClickMagic}
+              ></Card>
+            );
+          }}
+        ></WhiteCard>
+      </div>
+
       <div>
         <WhiteCard
           render={() => {

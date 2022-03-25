@@ -2,10 +2,11 @@ body {
     background-color: black;
 }
 .card{
+    font:0.7rem;
     background-color: wheat;
     border-radius: 3px;
-    width:12em;
-    height:18em;
+    width:8em;
+    height:5em;
     border-color: purple;
     color: purple;
     padding: 2%;
