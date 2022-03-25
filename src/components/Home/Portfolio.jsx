@@ -14,12 +14,17 @@ const Portfolio = () => {
       <li>Python</li>
     </ol>
   );
-  // myWorker.postMessage();
+  const [currentSrc, updateSrc] = useState(picture);
+
   // useEffect(() => {
-  //   myWorker.onmessage = (e) => {
-  //     console.log(e);
+  //   // start loading original image
+  //   const imageToLoad = new Image();
+  //   imageToLoad.src = picture;
+  //   imageToLoad.onload = () => {
+  //     // When image is loaded replace the src and set loading to false
+  //     updateSrc(picture);
   //   };
-  // }, [myWorker]);
+  // }, []);
   const [displayInfo, setDisplayInfo] = useState(
     <div className="displayArea">
       <h1>Software Developer</h1>
@@ -53,7 +58,7 @@ const Portfolio = () => {
       </div>
       <div className="row row-overlap centre-horizontal portfolio">
         <div className="circle">
-          <img src={picture} alt="profile picture"></img>
+          <img src={currentSrc} alt="profile picture"></img>
         </div>
         <div className="circle circle-bg">
           <p className="displayArea">{displayInfo}</p>
