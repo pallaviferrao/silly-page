@@ -20,8 +20,8 @@ const Games = () => {
             return (
               <Card
                 title="Custom Game"
-                description="create your own game"
-                buttonTitle="create game"
+                description="Create your own game"
+                buttonTitle="Create game"
                 handleClick={handleClick}
               ></Card>
             );
@@ -49,7 +49,7 @@ const Games = () => {
             return (
               <Card
                 title="Memory Game"
-                description="Rember places of things"
+                description="Remember places of things"
                 buttonTitle="Play game"
                 handleClick={handleClick}
               ></Card>

@@ -9,6 +9,7 @@ const Portfolio = () => {
     <ol>
       <li>Javascript</li>
       <li>React</li>
+      <li>Java</li>
       <li>Python</li>
     </ol>
   );

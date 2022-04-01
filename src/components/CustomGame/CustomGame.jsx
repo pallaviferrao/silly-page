@@ -1,6 +1,7 @@
 import React from "react";
+import Login from "./Login.jsx";
 
 const CustomGame = () => {
-  return "Hello";
+  return <Login />;
 };
 export default CustomGame;
