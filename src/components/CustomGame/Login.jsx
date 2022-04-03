@@ -60,9 +60,11 @@ const Login = () => {
     </UserContext.Provider>
   ) : (
     <div className="loginPage">
-      <h1>Login</h1>
+      <div className="upmargin">
+        <h1>Login</h1>
+      </div>
       <form>
-        <div>
+        <div className="upmargin">
           <label>
             Username:
             <input
@@ -72,7 +74,7 @@ const Login = () => {
             />
           </label>
         </div>
-        <div>
+        <div className="upmargin">
           <label>
             Password:
             <input
@@ -83,8 +85,10 @@ const Login = () => {
           </label>
         </div>
       </form>
-      <button onClick={() => handleLogin()}>Login</button>
-      <button onClick={() => handleSubmit()}>SignUp</button>
+      <div className="upmargin">
+        <button onClick={() => handleLogin()}>Login</button>
+        <button onClick={() => handleSubmit()}>SignUp</button>
+      </div>
       <h1>{errorMessage}</h1>
     </div>
   );

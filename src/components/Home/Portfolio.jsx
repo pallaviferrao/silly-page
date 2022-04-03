@@ -13,17 +13,6 @@ const Portfolio = ({ currentSrc }) => {
       <li>Python</li>
     </ol>
   );
-  // const [currentSrc, updateSrc] = useState({});
-
-  // useEffect(() => {
-  //   // start loading original image
-  //   const imageToLoad = new Image();
-  //   imageToLoad.src = picture;
-  //   imageToLoad.onload = () => {
-  //     // When image is loaded replace the src and set loading to false
-  //     updateSrc(picture);
-  //   };
-  // }, []);
   const [displayInfo, setDisplayInfo] = useState(
     <div className="displayArea">
       <h1>Software Developer</h1>

@@ -3,7 +3,7 @@ body {
 }
 .card{
     background-color: wheat;
-    border-radius: 3px;
+    border-radius: 8px;
     width:10em;
     height:12em;
     border-color: #29434e;
