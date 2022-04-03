@@ -62,22 +62,26 @@ const Login = () => {
     <div className="loginPage">
       <h1>Login</h1>
       <form>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            onChange={() => handleUserName(event)}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="text"
-            name="password"
-            onChange={() => handlePassword(event)}
-          />
-        </label>
+        <div>
+          <label>
+            Username:
+            <input
+              type="text"
+              name="username"
+              onChange={() => handleUserName(event)}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Password:
+            <input
+              type="text"
+              name="password"
+              onChange={() => handlePassword(event)}
+            />
+          </label>
+        </div>
       </form>
       <button onClick={() => handleLogin()}>Login</button>
       <button onClick={() => handleSubmit()}>SignUp</button>
