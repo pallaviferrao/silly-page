@@ -43,19 +43,25 @@ const ProfilePage = () => {
   return (
     <div className="loginPage">
       {/* <h1> {userDetails} </h1> */}
-      <h1>Hello there</h1>
+      <div className="upmargin">
+        <h1>Welcome to the page</h1>
+      </div>
       <form>
-        <label>
-          Game Name:
-          <input
-            type="text"
-            name="gamename"
-            onChange={() => setGameName(event.target.value)}
-          />
-        </label>
-        <button onClick={() => createGame()}>Create a new Game</button>
+        <div className="upmargin">
+          <label>
+            Game Name:
+            <input
+              type="text"
+              name="gamename"
+              onChange={() => setGameName(event.target.value)}
+            />
+          </label>
+        </div>
       </form>
-      <button onClick={() => viewGame()}>View You Games</button>
+      <div className="upmargin">
+        <button onClick={() => createGame()}>Create a new Game</button>
+        <button onClick={() => viewGame()}>View You Games</button>
+      </div>
       <div className="loginPage">
         <ol>{comp}</ol>
       </div>
