@@ -7,7 +7,7 @@ const Login = () => {
   const [username, setUserName] = useState("");
   const [password, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
-
+  const [errorMessage, setErrorMessage] = useState("");
   const handleUserName = (e) => {
     setUserName(e.target.value);
   };
@@ -31,6 +31,8 @@ const Login = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify([{ userId: userId, gameName: "firstGame" }]),
           };
+        } else {
+          setErrorMessage(res1.errorMessage);
         }
       });
   };
@@ -79,6 +81,7 @@ const Login = () => {
       </form>
       <button onClick={() => handleLogin()}>Login</button>
       <button onClick={() => handleSubmit()}>SignUp</button>
+      <h1>{errorMessage}</h1>
     </div>
   );
 };
