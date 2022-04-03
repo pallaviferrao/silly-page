@@ -1,10 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "./Login.jsx";
 import "./customgame.css";
 const ProfilePage = () => {
   const userDetails = React.useContext(UserContext);
-  const [games, setGames] = useState("");
+  const [games, setGames] = useState([]);
   const [gameName, setGameName] = useState("");
+  const [comp, setComp] = useState([]);
+  useEffect(() => {
+    console.log(games);
+    let res = games.map((element) => {
+      return <li key={element[0]}>{element[1]}</li>;
+    });
+    setComp(res);
+  }, [games]);
   const viewGame = () => {
     console.log("View Games");
     const gameOptions = {
@@ -12,11 +20,14 @@ const ProfilePage = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify([{ userId: userDetails }]),
     };
-    fetch("https://apple-tart-39767.herokuapp.com/getGames", gameOptions).then(
-      (res) => {
-        res.json();
-      }
-    );
+    fetch("https://apple-tart-39767.herokuapp.com/getGames", gameOptions)
+      .then((response) => response.json())
+      .then((res1) => {
+        console.log(res1);
+        if (res1.success) {
+          setGames(res1.games);
+        }
+      });
   };
   const createGame = () => {
     const gameOptions = {
@@ -45,7 +56,9 @@ const ProfilePage = () => {
         <button onClick={() => createGame()}>Create a new Game</button>
       </form>
       <button onClick={() => viewGame()}>View You Games</button>
-      <div>{games}</div>
+      <div className="loginPage">
+        <ol>{comp}</ol>
+      </div>
     </div>
   );
 };
