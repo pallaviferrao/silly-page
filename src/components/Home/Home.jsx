@@ -14,9 +14,15 @@ function Home() {
     // start loading original image
     const imageToLoad = new Image();
     imageToLoad.src = picture;
+    let effectActive = true;
     imageToLoad.onload = () => {
       // When image is loaded replace the src and set loading to false
-      updateSrc(picture);
+      if (effectActive) {
+        updateSrc(picture);
+      }
+    };
+    return () => {
+      effectActive = false;
     };
   }, []);
   setTimeout(() => {

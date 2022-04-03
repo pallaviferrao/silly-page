@@ -21,7 +21,7 @@ const Games = () => {
               <Card
                 title="Custom Game"
                 description="Create your own game"
-                buttonTitle="Create game"
+                buttonTitle="Login"
                 handleClick={handleClick}
               ></Card>
             );
