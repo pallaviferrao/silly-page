@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, createContext } from "react";
 import "./customgame.css";
 import ProfilePage from "./ProfilePage.jsx";
+export const UserContext = createContext("");
 const Login = () => {
+  const [userId, setUserId] = useState("");
   const [username, setUserName] = useState("");
   const [password, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
@@ -13,7 +15,6 @@ const Login = () => {
     setPassWord(e.target.value);
   };
   const handleSubmit = () => {
-    let userId = "";
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -24,7 +25,7 @@ const Login = () => {
       .then((res1) => {
         if (res1.success) {
           setLogin(true);
-          userId = res1.userId;
+          setUserId(res1.userId);
           gameOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -39,51 +40,22 @@ const Login = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify([{ username: username, password: password }]),
     };
-    // const gameOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify([
-    //     { userId: "JruzLvVLFkWdfPkRQljOKuv2aJg1", gameName: "firstGame" },
-    //   ]),
-    // };
-    // fetch("http://localhost:5000/createGame", gameOptions)
-    //   .then((game) => game.json())
-    //   .then((game) => console.log(game));
-    //}
+
     fetch("https://apple-tart-39767.herokuapp.com/login", requestOptions)
       .then((res) => res.json())
       .then((res1) => {
         if (res1.success) {
-          userId = res1.userId;
+          console.log(res1);
+          setUserId(res1.userId);
+          console.log(userId);
           setLogin(true);
         }
       });
   };
-  //   useEffect(() => {
-  //     const requestOptions = {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ username: { username } }),
-  //     };
-  //     fetch("http://localhost:4000/", requestOptions).then((res) =>
-  //       console.log(res.json())
-  //     );
-  //     //   .then(
-  //     //     (result) => {
-  //     //       setIsLoaded(true);
-  //     //       setItems(result);
-  //     //     },
-  //     //     // Note: it's important to handle errors here
-  //     //     // instead of a catch() block so that we don't swallow
-  //     //     // exceptions from actual bugs in components.
-  //     //     (error) => {
-  //     //       setIsLoaded(true);
-  //     //       setError(error);
-  //     //     }
-  //     //   );
-  //   }, []);
   return login ? (
-    <ProfilePage />
+    <UserContext.Provider value={userId}>
+      <ProfilePage />
+    </UserContext.Provider>
   ) : (
     <div className="loginPage">
       <h1>Login</h1>
