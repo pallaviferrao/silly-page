@@ -7,6 +7,7 @@ import Intro from "./Intro.jsx";
 import CustomGame from "../CustomGame/CustomGame.jsx";
 import MagicRecipe from "../MagicRecipe/MagicRecipe.jsx";
 import picture from "../../assets/images/pallavi.png";
+import NewGameRoom from "../SocketGame/NewGameRoom.jsx";
 function Home() {
   const [currentSrc, updateSrc] = useState({});
   const [page, setPage] = useState(<Intro />);
@@ -36,6 +37,7 @@ function Home() {
         <Route path="/games" element={<Games />}></Route>
         <Route path="/customGame" element={<CustomGame />}></Route>
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
+        <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
       </Routes>
     </Router>
   );
