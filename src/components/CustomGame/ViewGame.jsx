@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import NewGameRoom from "../SocketGame/NewGameRoom.jsx";
 const ViewGame = ({ games }) => {
   const [gameData, setGameData] = useState([]);
+  const [roomName, setRoomName] = useState("");
+  const [playRoom, setPlayRoom] = useState(false);
   const AddGame = (id) => {
     console.log("View Games");
     const gameOptions = {
@@ -17,8 +20,14 @@ const ViewGame = ({ games }) => {
         if (res1.success) {
           let a = gameData;
           console.log("Games", res1.games[0]);
+          const createOption = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+          };
           a.push(res1.games[0]);
+          fetch("http://localhost:5000/createRoom", createOption);
           setGameData(a);
+          setPlayRoom(true);
           console.log("GameData", gameData);
         }
       });
@@ -26,7 +35,9 @@ const ViewGame = ({ games }) => {
   const StartGame = () => {
     console.log("Sart game", gameData);
   };
-  return (
+  return playRoom ? (
+    <NewGameRoom prop={roomName} />
+  ) : (
     <div className="loginPage">
       {/* <ol>
         {games.map((element) => {
