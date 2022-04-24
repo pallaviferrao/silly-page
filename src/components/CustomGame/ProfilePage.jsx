@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "./Login.jsx";
-import ViewGame from "./ViewGame.jsx";
+import ViewGame from "../OwnGame/ViewGame.jsx";
 import CreateGame from "./CreateGame.jsx";
 import "./customgame.css";
 const ProfilePage = () => {
@@ -29,7 +29,7 @@ const ProfilePage = () => {
     };
 
     // https://apple-tart-39767.herokuapp.com/
-    fetch("https://apple-tart-39767.herokuapp.com/getGames", gameOptions)
+    fetch("http://localhost:5000/getGames", gameOptions)
       .then((response) => response.json())
       .then((res1) => {
         console.log(res1);

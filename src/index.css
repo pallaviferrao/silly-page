@@ -1,7 +1,8 @@
 body {
+
 }
 .card{
-    background-color: #FFC93C;
+    background-color: #f5cb42;
     border-radius: 8px;
     width:10em;
     height:12em;
@@ -20,7 +21,7 @@ body {
     font-family: 'Great Vibes', cursive;
     margin-left: 2em;
     padding: 1em;
-    background-color: black;
+    background-color: #f5cb42;
     
   }
   a{
