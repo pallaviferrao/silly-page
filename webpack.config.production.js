@@ -3,22 +3,24 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "production",
   entry: {
-    vendor: ["semantic-ui-react"],
+    vendor: ["react", "react-dom", "semantic-ui-react"],
     app: "/src/index.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
   },
-  resolve: {
-    alias: {
-      "react-dom": "@hot-loader/react-dom",
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     "react-dom": "@hot-loader/react-dom",
+  //   },
+  // },
   module: {
     rules: [
       {
@@ -128,9 +130,10 @@ module.exports = {
     maxAssetSize: 512000,
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
+    new BundleAnalyzerPlugin(),
   ],
 };

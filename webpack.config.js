@@ -1,11 +1,13 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const port = process.env.PORT || 3000;
 module.exports = {
   entry: {
-    vendor: ["semantic-ui-react"],
+    vendor: ["react", "react-dom", "semantic-ui-react"],
     app: "/src/index.js",
   },
   output: {
@@ -87,6 +89,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
+    new BundleAnalyzerPlugin(),
   ],
   devServer: {
     host: "localhost",
