@@ -1,8 +1,10 @@
 .games{
     display: flex;
     flex-direction: row;
-    margin-left: 3%;
+    /* margin-left: 3%; */
     flex-wrap: wrap;
+    height:100%;
+    background-color: #dcdcdc;
 }
 .games > div{
     margin: 2%;

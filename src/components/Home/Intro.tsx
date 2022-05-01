@@ -12,6 +12,6 @@ const Intro = () => {
       setName(nn);
     }, 150);
   }
-  return <div className="h1Tag">{name}</div>;
+  return <div className="intro"><div className="h1Tag">{name}</div></div>;
 };
 export default Intro;

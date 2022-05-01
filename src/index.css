@@ -4,24 +4,27 @@ html, body {
   padding: 0;
 }
 #root {
-  height: 100%
+  height: 100%;
+  /* background-color: black; */
 }
 .card{
-    background-color: #f5cb42;
-    border-radius: 8px;
-    width:10em;
-    height:12em;
-    border-color: #a52b54;
-    color: #a52b54;
+    background-color: white;
+    /* border-radius: 8px; */
+    width:20em;
+    height:20em;
+    color: #f17f66;
     padding: 2%;
 }
 .navigation{
   /* position:fixed;
   top:0; */
-    color: #a52b54;
+  margin: 0px;
+  width:100%;
+    color: #f17f66;
     display: flex;
     flex-direction: row;
     font-size: 1.4rem;
+    line-height: 1em;
     gap: 2em;
     display: flex;
     direction: column;

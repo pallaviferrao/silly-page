@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
+import picture from "../../assets/images/pink.jpg";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../Navigation.jsx";
 const Portfolio = ({ currentSrc }) => {
   const aboutMe =
-    "Hi, I am Pallavi. I am a full stack developer with about 4 years of experience.";
+    (<p>"Hi, I am Pallavi. I am a full stack developer with about 4 years of experience."</p>);
   const skills = (
     <ol>
       <li>Javascript</li>
@@ -36,7 +37,7 @@ const Portfolio = ({ currentSrc }) => {
       <div className="container">
         <div className="row row-overlap centre-horizontal portfolio">
           <div className="circle">
-            <img src={currentSrc} alt="profile picture"></img>
+            <img src={picture} alt="profile picture"></img>
           </div>
           <div className="circle circle-bg">
             <p className="displayArea">{displayInfo}</p>
