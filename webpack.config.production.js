@@ -3,8 +3,8 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin =
+//   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "production",
@@ -108,6 +108,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
 };
