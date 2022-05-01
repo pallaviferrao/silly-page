@@ -8,13 +8,15 @@ const port = process.env.PORT || 3000;
 module.exports = {
   entry: {
     vendor: ["react", "react-dom", "semantic-ui-react"],
-    app: "/src/index.js",
+    app: "/src/index.tsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
   },
   resolve: {
+    // extensions: [".ts", ".tsx", ".js"],
+    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
     alias: {
       "react-dom": "@hot-loader/react-dom",
     },
@@ -31,6 +33,7 @@ module.exports = {
           },
         },
       },
+      { test: /\.(ts|tsx)$/, exclude: /node_modules/, loader: "ts-loader" },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],

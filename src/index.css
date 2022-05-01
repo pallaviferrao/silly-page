@@ -1,6 +1,6 @@
-body {
-
-}
+/* body {
+    background-color: black;
+} */
 .card{
     background-color: #f5cb42;
     border-radius: 8px;
@@ -19,9 +19,8 @@ body {
     display: flex;
     direction: column;
     font-family: 'Great Vibes', cursive;
-    margin-left: 2em;
     padding: 1em;
-    background-color: #f5cb42;
+    background-color: rgb(248, 238, 225);
     
   }
   a{

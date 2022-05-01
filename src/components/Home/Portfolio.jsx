@@ -32,21 +32,8 @@ const Portfolio = ({ currentSrc }) => {
   let navigate = useNavigate();
   return (
     <>
-      {/* <Navigation /> */}
+      {/* <Navigation /> */} <Navigation />
       <div className="container">
-        <div className="row">
-          {/* <div className="navigation">
-            <a className="skills" onClick={handleSkills}>
-              Skills
-            </a>
-            <a className="gamesButton" onClick={handleNavigate}>
-              Games
-            </a>
-            <a className="aboutMe" onClick={handleMe}>
-              About me
-            </a>
-          </div> */}
-        </div>
         <div className="row row-overlap centre-horizontal portfolio">
           <div className="circle">
             <img src={currentSrc} alt="profile picture"></img>

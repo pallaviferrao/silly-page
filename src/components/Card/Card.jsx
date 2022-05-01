@@ -7,6 +7,7 @@ const Card = (props) => {
       {/* <div className="image">
         <img src={props.title}></img>
       </div> */}
+      {/* <img src={props.image} width="10px"></img> */}
       <div className="description">{props.description}</div>
       <button className="cardButton" onClick={props.handleClick}>
         {props.buttonTitle}

@@ -3,11 +3,12 @@ import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import "./home.css";
 // import { useNavigate } from "react-router-dom";
 import Portfolio from "./Portfolio.jsx";
+import GamePage from "../OwnGame/GamePage.jsx";
 import Games from "../Games/Games.jsx";
 import Intro from "./Intro.jsx";
 import CustomGame from "../CustomGame/CustomGame.jsx";
 import MagicRecipe from "../MagicRecipe/MagicRecipe.jsx";
-import picture from "../../assets/images/pink.png.jpg";
+import picture from "../../assets/images/pink.jpg";
 import NewGameRoom from "../SocketGame/NewGameRoom.jsx";
 import Navigation from "../Navigation.jsx";
 function Home() {
@@ -36,7 +37,6 @@ function Home() {
   //return page;
   return (
     <Router>
-      <Navigation />
       <Routes>
         <Route path="/" element={page}></Route>
         <Route path="/games" element={<Games />}></Route>
@@ -47,6 +47,7 @@ function Home() {
         <Route path="/customGame" element={<CustomGame />}></Route>
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
         <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
+        <Route path="/test" element={<GamePage />}></Route>
       </Routes>
     </Router>
   );

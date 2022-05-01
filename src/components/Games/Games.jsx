@@ -3,6 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import WhiteCard from "../WhiteCard.jsx";
 import Card from "../Card/Card.jsx";
+import image from "../../assets/images/cardimage.jpg";
 
 const Games = () => {
   let navigate = useNavigate();
@@ -22,6 +23,7 @@ const Games = () => {
                 title="Custom Game"
                 description="Create your own game"
                 buttonTitle="Login"
+                image={image}
                 handleClick={handleClick}
               ></Card>
             );
