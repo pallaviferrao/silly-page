@@ -8,3 +8,13 @@
     /* box-shadow: 0.5px 0.5px 0.5px 0.5px lightgray; */
     border: 1.5px solid lightgray;
 }
+.card:hover{
+    background-color: white;
+    /* border-radius: 8px; */
+    width:20em;
+    height:20em;
+    color: #f17f66;
+    padding: 2%;
+    box-shadow: 3px 3px 3px 3px lightgray;
+    border: 1.5px solid lightgray;
+}

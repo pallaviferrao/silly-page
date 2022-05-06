@@ -35,13 +35,18 @@
   padding: 3em; 
   
 }
-
-img{
-
-  width:22em;
+.circle > img {
+    width:22em;
   min-width: 22em;
   height: 22em;
   border-radius:50%
+}
+img{
+
+  /* width:22em;
+  min-width: 22em;
+  height: 22em; */
+  
 }
 .circle {
   height: 22em;
