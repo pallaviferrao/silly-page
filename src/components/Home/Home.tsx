@@ -13,7 +13,6 @@ import NewGameRoom from "../SocketGame/NewGameRoom.jsx";
 function Home() {
   const [currentSrc, updateSrc] = useState({});
   const [page, setPage] = useState(<Intro />);
-  // let navigate = useNavigate();
   useEffect(() => {
     // start loading original image
     const imageToLoad = new Image();
@@ -31,9 +30,7 @@ function Home() {
   }, []);
   setTimeout(() => {
     setPage(<Portfolio currentSrc={currentSrc} />);
-    // navigate("/home");
   }, 5000);
-  //return page;
   return (
     <Router>
       <Routes>

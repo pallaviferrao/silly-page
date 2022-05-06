@@ -33,17 +33,22 @@ const Portfolio = ({ currentSrc }) => {
   let navigate = useNavigate();
   return (
     <>
-      {/* <Navigation /> */} <Navigation />
-      <div className="container">
-        <div className="row row-overlap centre-horizontal portfolio">
+    <div>
+   <Navigation />
+   </div>
+  <div className="container">
+     
+
+        <div className="row row-overlap centre-horizontal">
           <div className="circle">
             <img src={picture} alt="profile picture"></img>
           </div>
-          <div className="circle circle-bg">
+          <div className="circle circle-round circle-bg">
             <p className="displayArea">{displayInfo}</p>
           </div>
         </div>
       </div>
+     
     </>
   );
 };

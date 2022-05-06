@@ -1,5 +1,5 @@
 import React from "react";
-import "../index.css";
+import "./whitecard.css";
 const WhiteCard = (props) => {
   return <div className="card">{props.render()}</div>;
 };
