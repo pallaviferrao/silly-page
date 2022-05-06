@@ -64,6 +64,20 @@ const Games = () => {
             }}
           ></WhiteCard>
         </div>
+        <div>
+          <WhiteCard
+            render={() => {
+              return (
+                <Card
+                  title="Memory Game"
+                  description="Remember places of things"
+                  buttonTitle="Play game"
+                  handleClick={handleClick}
+                ></Card>
+              );
+            }}
+          ></WhiteCard>
+        </div>
       </div>
     </>
   );
