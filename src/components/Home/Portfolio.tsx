@@ -8,31 +8,14 @@ const Portfolio = ({ currentSrc,text }) => {
     (<div><p>"Hi, I am Pallavi. I am a full stack developer with about 4 years of experience."</p>
     <h3>Email Id: pallaviferrao2004@gmail.com</h3>
     <h3>Number : 7406263791</h3></div>);
-  // const skills = (
-  //   <ol>
-  //     <li>Javascript</li>
-  //     <li>React</li>
-  //     <li>Java</li>
-  //     <li>Python</li>
-  //   </ol>
-  // );
 
   const [displayInfo, setDisplayInfo] = useState(
     text==="home"?<div className="displayArea">
       <h1>Pallavi Ferrao</h1>
       <h2>Software Developer</h2>
+      <h2>pallaviferrao2004@gmail.com</h2>
     </div>:aboutMe
   );
-  const handleSkills = () => {
-    setDisplayInfo(aboutMe);
-  };
-  const handleNavigate = () => {
-    navigate("/games");
-  };
-
-  const handleMe = () => {
-    setDisplayInfo(aboutMe);
-  };
   let navigate = useNavigate();
   return (
     <>
@@ -50,6 +33,7 @@ const Portfolio = ({ currentSrc,text }) => {
             <p className="displayArea">{displayInfo}</p>
           </div>
         </div>
+        
       </div>
      
     </>
