@@ -19,11 +19,8 @@ const Portfolio = ({ currentSrc,text }) => {
   let navigate = useNavigate();
   return (
     <>
-    <div>
-   <Navigation />
-   </div>
   <div className="container">
-     
+  <Navigation />
 
         <div className="row row-overlap centre-horizontal">
           <div className="circle">

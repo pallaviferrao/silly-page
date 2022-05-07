@@ -32,7 +32,7 @@
 .row{
   display: flex;
   flex-direction: row;;
-  padding: 3em; 
+  padding: 2em; 
   
 }
 .circle > img {
@@ -74,13 +74,13 @@ img{
 .displayArea >h1 {
   font-family: 'Great Vibes', cursive;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2em;
 }
 
 .displayArea >h2 {
   font-family: 'Great Vibes', cursive;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1em;
 }
 .displayArea{
   font-family: 'Great Vibes', cursive;
