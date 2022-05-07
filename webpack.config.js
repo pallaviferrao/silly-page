@@ -38,21 +38,10 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
-      //   {
-      //     test: /\.(jpg|png)$/,
-      //     use: {
-      //       loader: "url-loader",
-      //     },
-      //   },
       {
         test: /\.(gif|png|jpe?g)$/,
         use: [
           {
-            // loader: "file-loader",
-            // options: {
-            //   name: "[name].[ext]",
-            //   outputPath: "assets/images/",
-            // },
             loader: "img-optimize-loader",
             options: {
               compress: {
@@ -64,27 +53,21 @@ module.exports = {
           },
         ],
       },
-
+      {
+        test: /\.(pdf)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+            },
+          },
+        ],
+      },
       {
         test: /\.html$/,
         use: ["html-loader"],
       },
-      //   {
-      //     test: /\.css$/,
-      //     use: [
-      //       {
-      //         loader: "style-loader",
-      //       },
-      //       {
-      //         loader: "css-loader",
-      //         options: {
-      //           modules: true,
-      //           localsConvention: "camelCase",
-      //           sourceMap: true,
-      //         },
-      //       },
-      //     ],
-      //   },
     ],
   },
   plugins: [

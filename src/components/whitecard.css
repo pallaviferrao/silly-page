@@ -6,7 +6,7 @@
     color: #f17f66;
     padding: 2%;
     /* box-shadow: 0.5px 0.5px 0.5px 0.5px lightgray; */
-    border: 1.5px solid lightgray;
+    border: 1px solid #ccc;
 }
 .card:hover{
     background-color: white;
@@ -15,6 +15,6 @@
     height:20em;
     color: #f17f66;
     padding: 2%;
-    box-shadow: 3px 3px 3px 3px lightgray;
-    border: 1.5px solid lightgray;
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+
 }

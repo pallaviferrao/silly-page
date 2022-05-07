@@ -10,6 +10,7 @@ import CustomGame from "../CustomGame/CustomGame.jsx";
 import MagicRecipe from "../MagicRecipe/MagicRecipe.jsx";
 import picture from "../../assets/images/pink.jpg";
 import NewGameRoom from "../SocketGame/NewGameRoom.jsx";
+import Resume from "../Resume.jsx"
 function Home() {
   const [currentSrc, updateSrc] = useState({});
   const [page, setPage] = useState(<Intro />);
@@ -29,21 +30,23 @@ function Home() {
     };
   }, []);
   setTimeout(() => {
-    setPage(<Portfolio currentSrc={currentSrc} />);
+    setPage(<Portfolio currentSrc={currentSrc} text="home" />);
   }, 5000);
   return (
     <Router>
       <Routes>
         <Route path="/" element={page}></Route>
         <Route path="/games" element={<Games />}></Route>
+        <Route path="/aboutMe" element={<Portfolio currentSrc={currentSrc} text="aboutMe"/>}></Route>
         <Route
           path="/home"
-          element={<Portfolio currentSrc={currentSrc} />}
+          element={<Portfolio currentSrc={currentSrc}  text="home" />}
         ></Route>
         <Route path="/customGame" element={<CustomGame />}></Route>
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
         <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
         <Route path="/test" element={<GamePage />}></Route>
+        <Route path="/resume" element={<Resume />}></Route>
       </Routes>
     </Router>
   );

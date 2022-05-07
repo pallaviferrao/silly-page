@@ -3,6 +3,7 @@
 .lolo{
     height:100%;
     width: 100%;
+    cursor: pointer;
 }
 .title{
     font-size: 2.2rem;
@@ -25,7 +26,7 @@
 button {
     height:2em;
     color: #29434e;
-    background-color:#a52b54 ;
+    background-color:#f17f66 ;
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
