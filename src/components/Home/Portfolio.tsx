@@ -27,7 +27,7 @@ const Portfolio = ({ currentSrc,text }) => {
             <img src={picture} alt="profile picture"></img>
           </div>
           <div className="circle circle-round circle-bg">
-            <p className="displayArea">{displayInfo}</p>
+            <p>{displayInfo}</p>
           </div>
         </div>
         

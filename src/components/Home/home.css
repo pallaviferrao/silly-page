@@ -88,6 +88,7 @@ img{
   font-size: 1.5rem;
   padding: 0.5rem;
   margin: 0px;
+  padding: 0.5em;
 }
 
 .circle-bg{
@@ -115,7 +116,25 @@ img{
   .portfolio{
     margin-top:7em;
   }
-
+  .displayArea >h1 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  .displayArea >h2 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 1em;
+  }
+  .displayArea{
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0px;
+    padding: 0.5em;
+  }
 }
 @media (max-width: 400px) {
   .container{
@@ -132,6 +151,14 @@ img{
   }
   .portfolio{
     margin-top:7em;
+  }
+  .displayArea{
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0px;
+    padding: 0.5em;
   }
 
 }
