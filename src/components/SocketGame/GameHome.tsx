@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { io } from "socket.io-client";
-const GameHome = ({ isAdmin, socketId, socket, roomName }) => {
+const GameHome = ({ isAdmin, socketId, socket, roomName }:any) => {
   const [message, setMessage] = useState("");
   //   const socket = io("http://localhost:5000");
-  socket.on("hello-message", (message) => {
+  socket.on("hello-message", (message:string) => {
     console.log(message);
     setMessage(message);
   });

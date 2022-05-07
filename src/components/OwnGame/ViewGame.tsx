@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import NewGameRoom from "../SocketGame/NewGameRoom.jsx";
-const ViewGame = ({ games }) => {
+import NewGameRoom from "../SocketGame/NewGameRoom";
+const ViewGame = ({ games }:any) => {
   const [gameData, setGameData] = useState([]);
   const [roomName, setRoomName] = useState("");
   const [playRoom, setPlayRoom] = useState(false);
@@ -8,7 +8,7 @@ const ViewGame = ({ games }) => {
     console.log("GameData");
     console.log(gameData);
   }, [gameData]);
-  const AddGame = (id) => {
+  const AddGame = (id:any) => {
     console.log("View Games");
     const gameOptions = {
       method: "POST",
@@ -51,7 +51,7 @@ const ViewGame = ({ games }) => {
         })}
       </ol> */}
       <div>
-        {games.map((element) => {
+        {games.map((element:any) => {
           return (
             <div>
               <div>{element[1]}</div>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "./Login.jsx";
-import ViewGame from "../OwnGame/ViewGame.jsx";
-import CreateGame from "./CreateGame.jsx";
+import { UserContext } from "./Login";
+import ViewGame from "../OwnGame/ViewGame";
+import CreateGame from "./CreateGame";
 import "./customgame.css";
 const ProfilePage = () => {
   const userDetails = React.useContext(UserContext);

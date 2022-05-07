@@ -3,14 +3,13 @@ import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import "./home.css";
 // import { useNavigate } from "react-router-dom";
 import Portfolio from "./Portfolio";
-import GamePage from "../OwnGame/GamePage.jsx";
-import Games from "../Games/Games.jsx";
+import GamePage from "../OwnGame/GamePage";
+import Games from "../Games/Games";
 import Intro from "./Intro";
-import CustomGame from "../CustomGame/CustomGame.jsx";
-import MagicRecipe from "../MagicRecipe/MagicRecipe.jsx";
+import CustomGame from "../CustomGame/CustomGame";
+import MagicRecipe from "../MagicRecipe/MagicRecipe";
 import picture from "../../assets/images/pink.jpg";
-import NewGameRoom from "../SocketGame/NewGameRoom.jsx";
-import Resume from "../Resume.jsx"
+import NewGameRoom from "../SocketGame/NewGameRoom";
 function Home() {
   const [currentSrc, updateSrc] = useState({});
   const [page, setPage] = useState(<Intro />);
@@ -45,8 +44,7 @@ function Home() {
         <Route path="/customGame" element={<CustomGame />}></Route>
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
         <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
-        <Route path="/test" element={<GamePage />}></Route>
-        <Route path="/resume" element={<Resume />}></Route>
+        <Route path="/test" element={<GamePage gameName="HEllo" gameId="khslh"/>}></Route>
       </Routes>
     </Router>
   );

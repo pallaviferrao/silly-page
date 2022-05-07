@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { io } from "socket.io-client";
-import GameHome from "./GameHome.jsx";
-const NewGameRoom = ({ prop }) => {
+import GameHome from "./GameHome";
+const NewGameRoom = ({ prop }:any) => {
   const [roomName, setRoomName] = useState("");
   const [message, setMessage] = useState("");
   const [startGame, setStartGame] = useState(false);
   const [yourName, setYourName] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
   const socket = io("http://localhost:5000");
-  socket.on("room-joined", (message) => {
-    console.log("Pamp", message);
+  socket.on("room-joined", (message:string) => {
     setMessage(message);
     setStartGame(true);
   });
@@ -50,7 +49,7 @@ const NewGameRoom = ({ prop }) => {
           <input
             type="text"
             name="game name"
-            onChange={() => setRoomName(event.target.value)}
+            onChange={() => setRoomName((event.target as HTMLInputElement).value)}
           />
         </label>
         {message}
@@ -61,7 +60,7 @@ const NewGameRoom = ({ prop }) => {
           <input
             type="text"
             name="your name"
-            onChange={() => setYourName(event.target.value)}
+            onChange={() => setYourName((event.target as HTMLInputElement).value)}
           />
         </label>
       </div>

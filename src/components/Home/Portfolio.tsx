@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./home.css";
 import picture from "../../assets/images/pink.jpg";
 import { useNavigate } from "react-router-dom";
-import Navigation from "../Navigation.jsx";
-const Portfolio = ({ currentSrc,text }) => {
+import Navigation from "../Navigation";
+const Portfolio = ({ currentSrc,text }:any) => {
   const aboutMe =
     (<div><p>"Hi, I am Pallavi. I am a full stack developer with about 4 years of experience."</p>
     <h3>Email Id: pallaviferrao2004@gmail.com</h3>
@@ -16,7 +16,6 @@ const Portfolio = ({ currentSrc,text }) => {
       <h2>pallaviferrao2004@gmail.com</h2>
     </div>:aboutMe
   );
-  let navigate = useNavigate();
   return (
     <>
   <div className="container">

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "./Login.jsx";
+import { UserContext } from "./Login";
 import "./customgame.css";
-import GamePage from "../OwnGame/GamePage.jsx";
+import GamePage from "../OwnGame/GamePage";
 const CreateGame = () => {
   const userDetails = React.useContext(UserContext);
   const [gameName, setGameName] = useState("");
@@ -36,7 +36,7 @@ const CreateGame = () => {
             <input
               type="text"
               name="game name"
-              onChange={() => setGameName(event.target.value)}
+              onChange={() => setGameName((event.target as HTMLInputElement).value)}
             />
           </label>
         </div>

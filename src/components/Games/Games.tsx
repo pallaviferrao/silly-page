@@ -1,10 +1,10 @@
 import "./games.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import WhiteCard from "../WhiteCard.jsx";
-import Card from "../Card/Card.jsx";
+import WhiteCard from "../WhiteCard";
+import Card from "../Card/Card";
 import image from "../../assets/images/cardimage.jpg";
-import Navigation from "../Navigation.jsx";
+import Navigation from "../Navigation";
 
 const Games = () => {
   let navigate = useNavigate();

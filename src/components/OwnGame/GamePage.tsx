@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const GamePage = ({ gameName, gameId }) => {
+const GamePage = ({ gameName, gameId }:any) => {
   const [question, setQuestion] = useState([]);
-  const AddQuestion = (num, event) => {
+  const AddQuestion = (num:any, event:any) => {
     let arr = question;
     console.log(event);
     console.log(num);
@@ -11,7 +11,7 @@ const GamePage = ({ gameName, gameId }) => {
     setQuestion(arr);
     console.log(question);
   };
-  const AddAnswer = (num, event) => {
+  const AddAnswer = (num:any, event:any) => {
     let arr = question;
     arr[num][1] = event;
     setQuestion(arr);
@@ -40,7 +40,7 @@ const GamePage = ({ gameName, gameId }) => {
         // }
       });
   };
-  const handleQuestions = (num) => {
+  const handleQuestions = (num:any) => {
     const size = num.data;
     let arr = [];
     for (let i = 0; i < size; i++) {
@@ -74,7 +74,7 @@ const GamePage = ({ gameName, gameId }) => {
                     type="text"
                     name="questions5"
                     onChange={() => {
-                      AddQuestion(index, event.target.value);
+                      AddQuestion(index, (event.target as HTMLInputElement).value);
                     }}
                   />
                 </label>
@@ -86,7 +86,7 @@ const GamePage = ({ gameName, gameId }) => {
                     type="text"
                     name="questions6"
                     onChange={() => {
-                      AddAnswer(index, event.target.value);
+                      AddAnswer(index, (event.target as HTMLInputElement).value);
                     }}
                   />
                 </label>

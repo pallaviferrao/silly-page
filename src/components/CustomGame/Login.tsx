@@ -1,18 +1,18 @@
 import React, { useState, createContext } from "react";
 import "./customgame.css";
-import ProfilePage from "./ProfilePage.jsx";
+import ProfilePage from "./ProfilePage";
 export const UserContext = createContext("");
-const Login = () => {
+const Login = ():any => {
   const [userId, setUserId] = useState("");
   const [username, setUserName] = useState("");
   const [password, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const handleUserName = (e) => {
-    setUserName(e.target.value);
+  const handleUserName = (e:string):void => {
+    setUserName(e);
   };
-  const handlePassword = (e) => {
-    setPassWord(e.target.value);
+  const handlePassword = (e:string) => {
+    setPassWord(e);
   };
   const handleSubmit = () => {
     const requestOptions = {
@@ -26,11 +26,11 @@ const Login = () => {
         if (res1.success) {
           setLogin(true);
           setUserId(res1.userId);
-          gameOptions = {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify([{ userId: userId, gameName: "firstGame" }]),
-          };
+          // let gameOptions = {
+          //   method: "POST",
+          //   headers: { "Content-Type": "application/json" },
+          //   body: JSON.stringify([{ userId: userId, gameName: "firstGame" }]),
+          // };
         } else {
           setErrorMessage(res1.errorMessage);
         }
@@ -54,7 +54,7 @@ const Login = () => {
         }
       });
   };
-  return login ? (
+  return login? (
     <UserContext.Provider value={userId}>
       <ProfilePage />
     </UserContext.Provider>
@@ -70,7 +70,7 @@ const Login = () => {
             <input
               type="text"
               name="username"
-              onChange={() => handleUserName(event)}
+              onChange={() => handleUserName((event.target as HTMLInputElement).value)}
             />
           </label>
         </div>
@@ -80,7 +80,7 @@ const Login = () => {
             <input
               type="text"
               name="password"
-              onChange={() => handlePassword(event)}
+              onChange={() => handlePassword((event.target as HTMLInputElement).value)}
             />
           </label>
         </div>
