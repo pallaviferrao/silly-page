@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./home.css";
 let i = 0;
-const Intro = () => {
+const Intro = ():any=> {
   const [name, setName] = useState("");
   const myName = "Pallavi Ferrao";
 

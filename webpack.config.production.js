@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 // const BundleAnalyzerPlugin =
@@ -10,11 +11,16 @@ module.exports = {
   mode: "production",
   entry: {
     vendor: ["react", "react-dom", "semantic-ui-react"],
-    app: "/src/index.tsx",
+    app: {
+      import: "/src/index.tsx",
+      dependOn: "shared",
+    },
+    shared: "/src/components/CustomGame/Login.tsx",
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
+    filename: "[name].bundle.js",
+    // path: path.resolve(__dirname, "dist"),
+    // publicPath: "/",
   },
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
@@ -85,15 +91,17 @@ module.exports = {
           chunks: "all",
           enforce: true,
         },
-        vendor: {
-          chunks: "initial",
-          test: "vendor",
-          name: "vendor",
-          enforce: true,
-        },
+        chunks: "all",
+        // vendor: {
+        //   chunks: "initial",
+        //   test: "vendor",
+        //   name: "vendor",
+        //   enforce: true,
+        // },
       },
     },
     minimizer: [
+      new CssMinimizerPlugin(),
       // new ImageMinimizerPlugin({
       //   minimizer: {
       //     implementation: ImageMinimizerPlugin.imageminMinify,

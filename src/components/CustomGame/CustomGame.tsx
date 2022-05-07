@@ -1,7 +1,7 @@
-import React from "react";
+import React,{Suspense} from "react";
 import Login from "./Login";
 import "./customgame.css";
 const CustomGame = () => {
-  return <Login />;
+  return <Suspense fallback={<div>Waiting</div>}><Login /></Suspense>;
 };
 export default CustomGame;

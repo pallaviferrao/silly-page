@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
@@ -8,15 +9,20 @@ const port = process.env.PORT || 3000;
 module.exports = {
   entry: {
     vendor: ["react", "react-dom", "semantic-ui-react"],
-    app: "/src/index.tsx",
+    // app: "/src/index.tsx",
+
+    app: {
+      import: "/src/index.tsx",
+      dependOn: "shared",
+    },
+    shared: "/src/components/CustomGame/Login.tsx",
   },
   output: {
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
   },
   resolve: {
-    // extensions: [".ts", ".tsx", ".js"],
-    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: {
       "react-dom": "@hot-loader/react-dom",
     },
@@ -70,6 +76,11 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({
@@ -84,4 +95,5 @@ module.exports = {
     historyApiFallback: true,
     open: true,
   },
+  // mode: "development",
 };
