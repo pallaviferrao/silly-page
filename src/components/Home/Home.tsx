@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import "./home.css";
 // import { useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ import { ReactNode } from "react";
 //   cache: new InMemoryCache(),
 //   link: link
 // })
-
+export const ImageContext = createContext("");
 function Home() {
   const [currentSrc, updateSrc] = useState({});
   const [page, setPage] = useState<ReactNode>(<Intro />);
@@ -56,6 +56,7 @@ function Home() {
   }, 5000);
   return (
     <Suspense fallback={<div>Loading</div>}>
+       <ImageContext.Provider value={picture}>
     <Router>
       <Routes>
         <Route path="/" element={page}></Route>
@@ -74,6 +75,7 @@ function Home() {
         <Route path="/test" element={<GamePage gameName="HEllo" gameId="khslh"/>}></Route>
       </Routes>
     </Router>
+    </ImageContext.Provider>
     </Suspense>
   );
 }

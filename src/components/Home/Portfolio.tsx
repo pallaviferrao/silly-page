@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./home.css";
 import picture from "../../assets/images/Small-Pink.jpg";
 import { useNavigate } from "react-router-dom";
+import {ImageContext} from "./Home"
 import Navigation from "../Navigation";
 interface Portfolio {
   currentSrc:any;
@@ -9,7 +10,9 @@ interface Portfolio {
 }
 let image;
 const Portfolio = ({ currentSrc,text }:Portfolio) => {
+  const userImage = React.useContext(ImageContext);
   const aboutMe =
+
     (<div><p>"Hi, I am Pallavi. I am a full stack developer with about 4 years of experience."</p>
     <h3>Email Id: pallaviferrao2004@gmail.com</h3>
     <h3>Number : 7406263791</h3></div>);
@@ -28,7 +31,7 @@ const Portfolio = ({ currentSrc,text }:Portfolio) => {
 
         <div className="row row-overlap centre-horizontal">
           <div className="circle">
-            <img src={picture} alt="profile picture"></img>
+            <img src={userImage} alt="profile picture"></img>
           </div>
           <div className="circle circle-round circle-bg">
             <p>{displayInfo}</p>
