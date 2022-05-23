@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import picture from "../../assets/images/Optimized-pink.jpg";
+import picture from "../../assets/images/Super-Optimized-pink.jpg";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../Navigation";
 interface Portfolio {
