@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Great+Vibes&family=Roboto:wght@100&family=Tangerine&display=swap');
+.taskify{
+    margin-top: 22em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+
+}
+.input {
+    display: flex;
+    width : 90%;
+    position: relative;
+    align-items: center;
+}
+.input:focus {
+    box-shadow: 2px red;
+}
+.input_submit {
+    position: absolute;
+    right:0px;
+    box-shadow: 0 0 10px black;
+}

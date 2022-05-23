@@ -6,14 +6,35 @@ import Portfolio from "./Portfolio";
 import GamePage from "../OwnGame/GamePage";
 import Games from "../Games/Games";
 import Intro from "./Intro";
+import Todo from "../Todo/Todo"
 // import CustomGame from "../CustomGame/CustomGame";
 import MagicRecipe from "../MagicRecipe/MagicRecipe";
 import picture from "../../assets/images/pink.jpg";
 import NewGameRoom from "../SocketGame/NewGameRoom";
+import BracketGame from "../BracketGame/BracketGame"
 import { lazy,Suspense } from "react";
+import { ReactNode } from "react";
+// import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink,from } from '@apollo/client';
+// import {onError} from '@apollo/client/link/error';
+// const errorLink = onError(({graphqlErrors, networkError})=>{
+//   if(graphqlErrors){
+//     graphqlErrors.map((message:string)=>{
+//       alert(`GraphQl Error ${message}`)
+//     })
+//   }
+// })
+// const link = from({
+//   errorLink,
+//   new HttpLink({uri:""})
+// })
+// const client = new ApolloClient({
+//   cache: new InMemoryCache(),
+//   link: link
+// })
+
 function Home() {
   const [currentSrc, updateSrc] = useState({});
-  const [page, setPage] = useState(<Intro />);
+  const [page, setPage] = useState<ReactNode>(<Intro />);
   const CustomGame = lazy(()=> import("../CustomGame/CustomGame"))
   // useEffect(() => {
   //   // start loading original image
@@ -48,6 +69,8 @@ function Home() {
         <Route path="/customGame" element={<CustomGame />}></Route>
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
         <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
+        <Route path="/todo" element={<Todo/>}></Route>
+        <Route path="/bracketGame" element={<BracketGame/>}></Route>
         <Route path="/test" element={<GamePage gameName="HEllo" gameId="khslh"/>}></Route>
       </Routes>
     </Router>

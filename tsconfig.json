@@ -16,6 +16,6 @@
     },
     "include": [
       "src/*","./src/index.d.ts", "src/types"
-    ],
+, "src/components/BracketGame", "mocks" ],
     "exclude": ["node_modules", "src/**/*.spec.ts"]
   }

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import picture from "../../assets/images/pink.jpg";
+import picture from "../../assets/images/Optimized-pink.jpg";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../Navigation";
-const Portfolio = ({ currentSrc,text }:any) => {
+interface Portfolio {
+  currentSrc:Object;
+  text:string;
+}
+const Portfolio = ({ currentSrc,text }:Portfolio) => {
   const aboutMe =
     (<div><p>"Hi, I am Pallavi. I am a full stack developer with about 4 years of experience."</p>
     <h3>Email Id: pallaviferrao2004@gmail.com</h3>
@@ -18,7 +22,7 @@ const Portfolio = ({ currentSrc,text }:any) => {
   );
   return (
     <>
-  <div className="container">
+  <div data-test-id="container" className="container">
   <Navigation />
 
         <div className="row row-overlap centre-horizontal">

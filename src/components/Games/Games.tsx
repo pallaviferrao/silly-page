@@ -14,6 +14,12 @@ const Games = () => {
   const handleClickMagic = () => {
     navigate("/magicRecipe");
   };
+  const handleClickTodo =()=>{
+    navigate("/todo")
+  }
+  const handleClickGame=(game:string)=>{
+    navigate("/bracketGame")
+  }
   return (
     <>
       {" "}
@@ -69,10 +75,24 @@ const Games = () => {
             render={() => {
               return (
                 <Card
-                  title="Memory Game"
+                  title="Todo List"
                   description="Remember places of things"
                   buttonTitle="Play game"
-                  handleClick={handleClick}
+                  handleClick={handleClickTodo}
+                ></Card>
+              );
+            }}
+          ></WhiteCard>
+        </div>
+        <div>
+          <WhiteCard
+            render={() => {
+              return (
+                <Card
+                  title="Bracket Path"
+                  description="Can the bracket have a valid path"
+                  buttonTitle="Play game"
+                  handleClick={handleClickGame('BracketPath')}
                 ></Card>
               );
             }}

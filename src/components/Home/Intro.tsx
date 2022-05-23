@@ -12,6 +12,6 @@ const Intro = ():any=> {
       setName(nn);
     }, 150);
   }
-  return <div className="intro"><div className="h1Tag">{name}</div></div>;
+  return <div role="Name" className="intro"><div className="h1Tag">{name}</div></div>;
 };
 export default Intro;
