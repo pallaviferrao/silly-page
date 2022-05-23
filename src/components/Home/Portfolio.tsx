@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import picture from "../../assets/images/Super-Optimized-pink.jpg";
+import picture from "../../assets/images/Small-Pink.jpg";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../Navigation";
 interface Portfolio {
   currentSrc:any;
   text:string;
 }
+let image;
 const Portfolio = ({ currentSrc,text }:Portfolio) => {
   const aboutMe =
     (<div><p>"Hi, I am Pallavi. I am a full stack developer with about 4 years of experience."</p>
@@ -27,7 +28,7 @@ const Portfolio = ({ currentSrc,text }:Portfolio) => {
 
         <div className="row row-overlap centre-horizontal">
           <div className="circle">
-            <img src={currentSrc} alt="profile picture"></img>
+            <img src={picture} alt="profile picture"></img>
           </div>
           <div className="circle circle-round circle-bg">
             <p>{displayInfo}</p>

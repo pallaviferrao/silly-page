@@ -9,7 +9,7 @@ import Intro from "./Intro";
 import Todo from "../Todo/Todo"
 // import CustomGame from "../CustomGame/CustomGame";
 import MagicRecipe from "../MagicRecipe/MagicRecipe";
-import picture from "../../assets/images/Super-Optimized-pink.jpg";
+import picture from "../../assets/images/Small-Pink.jpg";
 import NewGameRoom from "../SocketGame/NewGameRoom";
 import BracketGame from "../BracketGame/BracketGame"
 import { lazy,Suspense } from "react";
