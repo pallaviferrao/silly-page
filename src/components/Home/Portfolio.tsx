@@ -4,7 +4,7 @@ import picture from "../../assets/images/Super-Optimized-pink.jpg";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../Navigation";
 interface Portfolio {
-  currentSrc:Object;
+  currentSrc:any;
   text:string;
 }
 const Portfolio = ({ currentSrc,text }:Portfolio) => {
@@ -27,7 +27,7 @@ const Portfolio = ({ currentSrc,text }:Portfolio) => {
 
         <div className="row row-overlap centre-horizontal">
           <div className="circle">
-            <img src={picture} alt="profile picture"></img>
+            <img src={currentSrc} alt="profile picture"></img>
           </div>
           <div className="circle circle-round circle-bg">
             <p>{displayInfo}</p>

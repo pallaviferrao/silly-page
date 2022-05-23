@@ -9,7 +9,7 @@ import Intro from "./Intro";
 import Todo from "../Todo/Todo"
 // import CustomGame from "../CustomGame/CustomGame";
 import MagicRecipe from "../MagicRecipe/MagicRecipe";
-import picture from "../../assets/images/pink.jpg";
+import picture from "../../assets/images/Super-Optimized-pink.jpg";
 import NewGameRoom from "../SocketGame/NewGameRoom";
 import BracketGame from "../BracketGame/BracketGame"
 import { lazy,Suspense } from "react";
@@ -52,7 +52,7 @@ function Home() {
   //   };
   // }, []);
   setTimeout(() => {
-    setPage(<Portfolio currentSrc={currentSrc} text="home" />);
+    setPage(<Portfolio currentSrc={picture} text="home" />);
   }, 5000);
   return (
     <Suspense fallback={<div>Loading</div>}>
