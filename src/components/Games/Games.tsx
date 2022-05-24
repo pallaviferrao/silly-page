@@ -17,9 +17,6 @@ const Games = () => {
   const handleClickTodo =()=>{
     navigate("/todo")
   }
-  const handleClickGame=(game:string)=>{
-    navigate("/bracketGame")
-  }
   return (
     <>
       {" "}
@@ -79,20 +76,6 @@ const Games = () => {
                   description="Remember places of things"
                   buttonTitle="Play game"
                   handleClick={handleClickTodo}
-                ></Card>
-              );
-            }}
-          ></WhiteCard>
-        </div>
-        <div>
-          <WhiteCard
-            render={() => {
-              return (
-                <Card
-                  title="Bracket Path"
-                  description="Can the bracket have a valid path"
-                  buttonTitle="Play game"
-                  handleClick={handleClickGame('BracketPath')}
                 ></Card>
               );
             }}
