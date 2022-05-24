@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import {ImageContext} from "./Home"
 import Navigation from "../Navigation";
 interface Portfolio {
-  currentSrc:any;
   text:string;
 }
 let image;
-const Portfolio = ({ currentSrc,text }:Portfolio) => {
+const Portfolio = ({text }:Portfolio) => {
+  console.log("Check")
   const userImage = React.useContext(ImageContext);
   const aboutMe =
 

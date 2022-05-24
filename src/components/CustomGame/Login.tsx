@@ -1,20 +1,23 @@
-import React, { useState, createContext } from "react";
-import "./customgame.css";
+import React, { useState, createContext, DetailedHTMLProps, InputHTMLAttributes } from "react";
+// import "./customgame.css";
 import ProfilePage from "./ProfilePage";
 export const UserContext = createContext("");
-const Login = ():any => {
+const Login = React.memo(():any => {
+  console.log("Hello")
   const [userId, setUserId] = useState("");
   const [username, setUserName] = useState("");
   const [password, setPassWord] = useState("");
   const [login, setLogin] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  let user="";
+  let pass="";
   const handleUserName = (e:string):void => {
-    setUserName(e);
+    setUserName(e)
   };
-  const handlePassword = (e:string) => {
-    setPassWord(e);
+  const handlePassword = (e:string): any => {
+    setPassWord(e)
   };
-  const handleSubmit = () => {
+  const handleSubmit = () => { console.log("Login")
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -37,6 +40,7 @@ const Login = ():any => {
       });
   };
   const handleLogin = () => {
+    console.log("Login")
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -59,9 +63,9 @@ const Login = ():any => {
       <ProfilePage />
     </UserContext.Provider>
   ) : (
-    <div className="loginPage">
+  <div className="loginPage">
       <div className="upmargin">
-        <h1>Login</h1>
+        <h1 className="headingLogin">Login</h1>
       </div>
       <form>
         <div className="upmargin">
@@ -70,7 +74,7 @@ const Login = ():any => {
             <input
               type="text"
               name="username"
-              onChange={() => handleUserName((event.target as HTMLInputElement).value)}
+              onChange={(e)=>handleUserName((event.target as HTMLInputElement).value)}
             />
           </label>
         </div>
@@ -78,9 +82,10 @@ const Login = ():any => {
           <label>
             Password:
             <input
-              type="text"
+              type="password"
               name="password"
-              onChange={() => handlePassword((event.target as HTMLInputElement).value)}
+
+               onChange={(e)=>handlePassword((event.target as HTMLInputElement).value)}
             />
           </label>
         </div>
@@ -89,9 +94,9 @@ const Login = ():any => {
         <button onClick={() => handleLogin()}>Login</button>
         <button onClick={() => handleSubmit()}>SignUp</button>
       </div>
-      <h1>{errorMessage}</h1>
+      {/* <h1>{errorMessage}</h1> */}
     </div>
-  );
-};
+  )
+});
 
 export default Login;

@@ -33,7 +33,6 @@ import { ReactNode } from "react";
 // })
 export const ImageContext = createContext("");
 function Home() {
-  const [currentSrc, updateSrc] = useState({});
   const [page, setPage] = useState<ReactNode>(<Intro />);
   const CustomGame = lazy(()=> import("../CustomGame/CustomGame"))
   // useEffect(() => {
@@ -51,9 +50,11 @@ function Home() {
   //     effectActive = false;
   //   };
   // }, []);
+  useEffect(() => {
   setTimeout(() => {
-    setPage(<Portfolio currentSrc={picture} text="home" />);
+    setPage(<Portfolio text="home" />);
   }, 5000);
+},[])
   return (
     <Suspense fallback={<div>Loading</div>}>
        <ImageContext.Provider value={picture}>
@@ -61,10 +62,10 @@ function Home() {
       <Routes>
         <Route path="/" element={page}></Route>
         <Route path="/games" element={<Games />}></Route>
-        <Route path="/aboutMe" element={<Portfolio currentSrc={currentSrc} text="aboutMe"/>}></Route>
+        <Route path="/aboutMe" element={<Portfolio text="aboutMe"/>}></Route>
         <Route
           path="/home"
-          element={<Portfolio currentSrc={currentSrc}  text="home" />}
+          element={<Portfolio   text="home" />}
         ></Route>
       
         <Route path="/customGame" element={<CustomGame />}></Route>
