@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "./Login";
+import { UserContext } from "../Home/Home"
 import "./customgame.css";
 import GamePage from "../OwnGame/GamePage";
 const CreateGame = () => {
+  console.log("Create Game PAge")
   const userDetails = React.useContext(UserContext);
   const [gameName, setGameName] = useState("");
   const [gameId, setGameId] = useState("");
@@ -17,7 +18,7 @@ const CreateGame = () => {
       body: JSON.stringify([{ userId: userDetails, gameName: gameName }]),
     };
     // https://apple-tart-39767.herokuapp.com/
-    fetch("https://apple-tart-39767.herokuapp.com/createGame", gameOptions)
+    fetch("http://localhost:5000/createGame", gameOptions)
       .then((game) => game.json())
       .then((game) => {
         if (game.success) {

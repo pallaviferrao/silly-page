@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "./Login";
 import ViewGame from "../OwnGame/ViewGame";
 import CreateGame from "./CreateGame";
+import { UserContext } from "../Home/Home";
+import { useNavigate } from "react-router-dom";
 import "./customgame.css";
 const ProfilePage = () => {
+  let navigate = useNavigate();
   const userDetails = React.useContext(UserContext);
   const [games, setGames] = useState([]);
   const [gameName, setGameName] = useState("");
@@ -12,6 +14,7 @@ const ProfilePage = () => {
   const [createGamePage, setCreateGamePage] = useState(false);
   const handleCreatGamePage = () => {
     setCreateGamePage(false);
+    navigate("/createGame");
   };
   useEffect(() => {
     console.log(games);
@@ -41,6 +44,7 @@ const ProfilePage = () => {
   };
   const createGame = () => {
     setCreateGamePage(true);
+    navigate("/createGame");
     // const gameOptions = {
     //   method: "POST",
     //   headers: { "Content-Type": "application/json" },
@@ -56,11 +60,11 @@ const ProfilePage = () => {
   };
 
   return viewGames ? (
-    <ViewGame games={games} />
-  ) : createGamePage ? (
-    <CreateGame />
-  ) : (
-    <div className="loginPage">
+    <ViewGame games={games} />):
+  // ) : createGamePage ? (
+  //   <CreateGame />
+  // ) : (
+    (<div className="loginPage">
       {/* <h1> {userDetails} </h1> */}
       <div className="upmargin">
         <h1>Welcome to the page</h1>
