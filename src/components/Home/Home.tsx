@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
+import { Routes, HashRouter as Router, Route } from "react-router-dom";
 import "./home.css";
 // import { useNavigate } from "react-router-dom";
 import Portfolio from "./Portfolio";
@@ -7,57 +7,35 @@ import GamePage from "../OwnGame/GamePage";
 import Games from "../Games/Games";
 import Intro from "./Intro";
 import Todo from "../Todo/Todo"
+import Login from "../CustomGame/Login"
 // import CustomGame from "../CustomGame/CustomGame";
 import MagicRecipe from "../MagicRecipe/MagicRecipe";
 import picture from "../../assets/images/Small-Pink.jpg";
 import NewGameRoom from "../SocketGame/NewGameRoom";
 import BracketGame from "../BracketGame/BracketGame"
 import { lazy,Suspense } from "react";
+import CreateGame from "../CustomGame/CreateGame"
 import { ReactNode } from "react";
-// import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink,from } from '@apollo/client';
-// import {onError} from '@apollo/client/link/error';
-// const errorLink = onError(({graphqlErrors, networkError})=>{
-//   if(graphqlErrors){
-//     graphqlErrors.map((message:string)=>{
-//       alert(`GraphQl Error ${message}`)
-//     })
-//   }
-// })
-// const link = from({
-//   errorLink,
-//   new HttpLink({uri:""})
-// })
-// const client = new ApolloClient({
-//   cache: new InMemoryCache(),
-//   link: link
-// })
 export const ImageContext = createContext("");
+export const UserContext = createContext("");
 function Home() {
+
+  // const userDetails = React.useContext(UserContext);
   const [page, setPage] = useState<ReactNode>(<Intro />);
+  const [userId, setUserId] = useState("");
   const CustomGame = lazy(()=> import("../CustomGame/CustomGame"))
-  // useEffect(() => {
-  //   // start loading original image
-  //   const imageToLoad = new Image();
-  //   imageToLoad.src = picture;
-  //   let effectActive = true;
-  //   imageToLoad.onload = () => {
-  //     // When image is loaded replace the src and set loading to false
-  //     if (effectActive) {
-  //       updateSrc(picture);
-  //     }
-  //   };
-  //   return () => {
-  //     effectActive = false;
-  //   };
-  // }, []);
   useEffect(() => {
   setTimeout(() => {
     setPage(<Portfolio text="home" />);
   }, 5000);
 },[])
+const handleUserId =(val:any)=>{
+  setUserId(val);
+}
   return (
     <Suspense fallback={<div>Loading</div>}>
        <ImageContext.Provider value={picture}>
+       <UserContext.Provider value={userId}>
     <Router>
       <Routes>
         <Route path="/" element={page}></Route>
@@ -67,8 +45,11 @@ function Home() {
           path="/home"
           element={<Portfolio   text="home" />}
         ></Route>
-      
-        <Route path="/customGame" element={<CustomGame />}></Route>
+       
+      <Route path="/createGame" element={<CreateGame/>}></Route>
+   
+      <Route path="/customGame" element={<Login addUserContent={(val:any)=>handleUserId(val)}/>}></Route>
+        
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
         <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
         <Route path="/todo" element={<Todo/>}></Route>
@@ -76,6 +57,7 @@ function Home() {
         <Route path="/test" element={<GamePage gameName="HEllo" gameId="khslh"/>}></Route>
       </Routes>
     </Router>
+    </UserContext.Provider>
     </ImageContext.Provider>
     </Suspense>
   );

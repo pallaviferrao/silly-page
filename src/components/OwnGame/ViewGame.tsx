@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import NewGameRoom from "../SocketGame/NewGameRoom";
+import { io } from "socket.io-client";
+const socket = io("http://localhost:5000");
+
+
 const ViewGame = ({ games }:any) => {
+  socket.on("room-joined", (message:string) => {
+    console.log(message)
+    setPlayRoom(true);
+  });
   const [gameData, setGameData] = useState([]);
   const [roomName, setRoomName] = useState("");
   const [playRoom, setPlayRoom] = useState(false);
@@ -37,9 +45,12 @@ const ViewGame = ({ games }:any) => {
     const createOption = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      body: JSON.stringify([{ gameData: gameData }]),
     };
     fetch("http://localhost:5000/createRoom", createOption);
     console.log("Sart game", gameData);
+    let roomName = "Pallu"
+    socket.emit("create-room", roomName);
   };
   return playRoom ? (
     <NewGameRoom prop={roomName} />

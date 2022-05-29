@@ -1,8 +1,9 @@
 import React, { useState, createContext, DetailedHTMLProps, InputHTMLAttributes } from "react";
 // import "./customgame.css";
+import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import ProfilePage from "./ProfilePage";
-export const UserContext = createContext("");
-const Login = React.memo(():any => {
+import CreateGame  from "./CreateGame";
+const Login = (props:any):any => {
   console.log("Hello")
   const [userId, setUserId] = useState("");
   const [username, setUserName] = useState("");
@@ -52,16 +53,15 @@ const Login = React.memo(():any => {
       .then((res1) => {
         if (res1.success) {
           console.log(res1);
-          setUserId(res1.userId);
+          props.addUserContent(res1.userId)
+          // setUserId(res1.userId);
           console.log(userId);
           setLogin(true);
         }
       });
   };
   return login? (
-    <UserContext.Provider value={userId}>
-      <ProfilePage />
-    </UserContext.Provider>
+    <ProfilePage />
   ) : (
   <div className="loginPage">
       <div className="upmargin">
@@ -97,6 +97,6 @@ const Login = React.memo(():any => {
       {/* <h1>{errorMessage}</h1> */}
     </div>
   )
-});
+}
 
 export default Login;
