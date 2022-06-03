@@ -38,7 +38,7 @@ const Games = () => {
             }}
           ></WhiteCard>
         </div>
-        <div>
+        {/* <div>
           <WhiteCard
             render={() => {
               return (
@@ -80,7 +80,7 @@ const Games = () => {
               );
             }}
           ></WhiteCard>
-        </div>
+        </div> */}
       </div>
     </>
   );

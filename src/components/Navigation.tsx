@@ -1,6 +1,6 @@
 import React from "react";
 import "./navigation.css";
-import resume from "../assets/images/Pallavi_Ferrao_Resume.pdf";
+import resume from "../assets/images/PallaviFerrao_Resume.pdf";
 import { useNavigate } from "react-router-dom";
 const Navigation = () => {
   let navigate = useNavigate();
