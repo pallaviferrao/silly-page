@@ -17,6 +17,10 @@ const Games = () => {
   const handleClickTodo =()=>{
     navigate("/todo")
   }
+  const handleMemoryGame =()=>{
+    window.open("https://memory-game-pallaviferrao.netlify.app/");
+   // navigate("/memoryGame")
+  }
   return (
     <>
       {" "}
@@ -33,6 +37,20 @@ const Games = () => {
                   // buttonTitle="Login"
                   image={image}
                   handleClick={handleClick}
+                ></Card>
+              );
+            }}
+          ></WhiteCard>
+        </div>
+        <div>
+          <WhiteCard
+            render={() => {
+              return (
+                <Card
+                  title="Memory Game"
+                  description="Remember places of things"
+                  buttonTitle="Play game"
+                  handleClick={handleMemoryGame}
                 ></Card>
               );
             }}

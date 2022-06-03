@@ -16,6 +16,7 @@ import BracketGame from "../BracketGame/BracketGame"
 import { lazy,Suspense } from "react";
 import CreateGame from "../CustomGame/CreateGame"
 import { ReactNode } from "react";
+import MemoryGame from "../MemoryGame/MemoryGame"
 export const ImageContext = createContext("");
 export const UserContext = createContext("");
 function Home() {
@@ -51,6 +52,7 @@ const handleUserId =(val:any)=>{
       <Route path="/customGame" element={<Login addUserContent={(val:any)=>handleUserId(val)}/>}></Route>
         
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
+        <Route path="/memoryGame" element={<MemoryGame />}></Route>
         <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
         <Route path="/todo" element={<Todo/>}></Route>
         <Route path="/bracketGame" element={<BracketGame/>}></Route>

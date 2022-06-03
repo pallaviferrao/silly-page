@@ -96,8 +96,16 @@ img{
 }
 
 .centre-horizontal{
+  font-family: 'Great Vibes', cursive;
+  font-size: 1em;
   align-items: center;
   justify-content: center;
+}
+
+.linkedInProfile{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
