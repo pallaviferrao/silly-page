@@ -21,6 +21,9 @@ const Games = () => {
     window.open("https://memory-game-pallaviferrao.netlify.app/");
    // navigate("/memoryGame")
   }
+  const handlePokemonGame =()=>{
+    window.open("https://pokedex-pallaviferrao.netlify.app/");
+  }
   return (
     <>
       {" "}
@@ -48,9 +51,23 @@ const Games = () => {
               return (
                 <Card
                   title="Memory Game"
-                  description="Remember places of things"
+                  description="Match Pokemons with their pairs"
                   buttonTitle="Play game"
                   handleClick={handleMemoryGame}
+                ></Card>
+              );
+            }}
+          ></WhiteCard>
+        </div>
+        <div>
+          <WhiteCard
+            render={() => {
+              return (
+                <Card
+                  title="Poke Dex Battle"
+                  description="Use your powers to win the Pokemon Battle"
+                  buttonTitle="Play game"
+                  handleClick={handlePokemonGame}
                 ></Card>
               );
             }}
