@@ -65,7 +65,7 @@ const Games = () => {
               return (
                 <Card
                   title="Poke Dex Battle"
-                  description="Use your powers to win the Pokemon Battle"
+                  description="Pokemon Power Battle"
                   buttonTitle="Play game"
                   handleClick={handlePokemonGame}
                 ></Card>
