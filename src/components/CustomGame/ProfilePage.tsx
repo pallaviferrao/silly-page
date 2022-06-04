@@ -67,7 +67,7 @@ const ProfilePage = () => {
     (<div className="loginPage">
       {/* <h1> {userDetails} </h1> */}
       <div className="upmargin">
-        <h1>Welcome to the page</h1>
+        <h1>Welcome to your profile</h1>
       </div>
       {/* <form>
         <div className="upmargin">
@@ -81,9 +81,13 @@ const ProfilePage = () => {
           </label>
         </div>
       </form> */}
-      <div className="upmargin">
-        <button onClick={() => createGame()}>Create a new Game</button>
-        <button onClick={() => viewGame()}>View Your Games</button>
+      <div className="gameLinks">
+        <div>
+        <a  className="createGame" onClick={() => createGame()}>Create a new Game</a>
+        </div>
+        <div>
+        <a  className="viewGame" onClick={() => viewGame()}>View Your Games</a>
+        </div>
       </div>
       {/* <div className="loginPage">
         <ol>{comp}</ol>

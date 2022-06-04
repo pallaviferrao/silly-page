@@ -21,6 +21,10 @@
 .upmargin > button {
     margin-right:1%
 }
+.gameLinks{
+    display: flex;
+    flex-direction: column;
+}
 input[type=text] {
     width: 100%;
     padding: 12px 20px;

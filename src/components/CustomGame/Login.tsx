@@ -3,7 +3,9 @@ import React, { useState, createContext, DetailedHTMLProps, InputHTMLAttributes 
 import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import ProfilePage from "./ProfilePage";
 import CreateGame  from "./CreateGame";
+import { useNavigate } from "react-router-dom";
 const Login = (props:any):any => {
+  let navigate = useNavigate();
   console.log("Hello")
   const [userId, setUserId] = useState("");
   const [username, setUserName] = useState("");
@@ -19,26 +21,27 @@ const Login = (props:any):any => {
     setPassWord(e)
   };
   const handleSubmit = () => { console.log("Login")
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify([{ username: username, password: password }]),
-    };
-    fetch("https://apple-tart-39767.herokuapp.com/signup", requestOptions)
-      .then((res) => res.json())
-      .then((res1) => {
-        if (res1.success) {
-          setLogin(true);
-          setUserId(res1.userId);
-          // let gameOptions = {
-          //   method: "POST",
-          //   headers: { "Content-Type": "application/json" },
-          //   body: JSON.stringify([{ userId: userId, gameName: "firstGame" }]),
-          // };
-        } else {
-          setErrorMessage(res1.errorMessage);
-        }
-      });
+  navigate("/signup");
+    // const requestOptions = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify([{ username: username, password: password }]),
+    // };
+    // fetch("https://apple-tart-39767.herokuapp.com/signup", requestOptions)
+    //   .then((res) => res.json())
+    //   .then((res1) => {
+    //     if (res1.success) {
+    //       setLogin(true);
+    //       setUserId(res1.userId);
+    //       // let gameOptions = {
+    //       //   method: "POST",
+    //       //   headers: { "Content-Type": "application/json" },
+    //       //   body: JSON.stringify([{ userId: userId, gameName: "firstGame" }]),
+    //       // };
+    //     } else {
+    //       setErrorMessage(res1.errorMessage);
+    //     }
+    //   });
   };
   const handleLogin = () => {
     console.log("Login")
@@ -92,7 +95,7 @@ const Login = (props:any):any => {
       </form>
       <div className="upmargin">
         <button onClick={() => handleLogin()}>Login</button>
-        <button onClick={() => handleSubmit()}>SignUp</button>
+        <button onClick={() => handleSubmit()}>Sign Up</button>
       </div>
       {/* <h1>{errorMessage}</h1> */}
     </div>
