@@ -8,6 +8,7 @@ import Games from "../Games/Games";
 import Intro from "./Intro";
 import Todo from "../Todo/Todo"
 import Login from "../CustomGame/Login"
+import ProfilePage from "../CustomGame/ProfilePage";
 // import CustomGame from "../CustomGame/CustomGame";
 import MagicRecipe from "../MagicRecipe/MagicRecipe";
 import picture from "../../assets/images/Small-Pink.jpg";
@@ -18,6 +19,7 @@ import CreateGame from "../CustomGame/CreateGame"
 import { ReactNode } from "react";
 import SignUp from "../CustomGame/SignUp"
 import MemoryGame from "../MemoryGame/MemoryGame"
+import ViewGame from "../OwnGame/ViewGame";
 export const ImageContext = createContext("");
 export const UserContext = createContext("");
 function Home() {
@@ -54,9 +56,11 @@ const handleUserId =(val:any)=>{
         <Route path="/signup" element ={<SignUp/>}/>
         <Route path="/magicRecipe" element={<MagicRecipe />}></Route>
         <Route path="/memoryGame" element={<MemoryGame />}></Route>
-        <Route path="/newgame" element={<NewGameRoom prop="Pallavi" />}></Route>
+        <Route path="/newgame" element={<NewGameRoom />}></Route>
         <Route path="/todo" element={<Todo/>}></Route>
+        <Route path="/viewGame" element={<ViewGame/>}></Route>
         <Route path="/bracketGame" element={<BracketGame/>}></Route>
+        <Route path="/profilePage" element={<ProfilePage/>}></Route>
         <Route path="/test" element={<GamePage gameName="HEllo" gameId="khslh"/>}></Route>
       </Routes>
     </Router>

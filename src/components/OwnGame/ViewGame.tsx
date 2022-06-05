@@ -1,17 +1,41 @@
 import React, { useState, useEffect } from "react";
-import NewGameRoom from "../SocketGame/NewGameRoom";
+import GameHome from "../SocketGame/GameHome";
+import { UserContext } from "../Home/Home";
 import { io } from "socket.io-client";
 const socket = io("http://localhost:5000");
 
 
-const ViewGame = ({ games }:any) => {
+const ViewGame = () => {
+  const userDetails = React.useContext(UserContext);
+  const [games, setGames] = useState([]);
+  useEffect(() => {
+    const gameOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify([{ userId: userDetails }]),
+    };
+
+    // https://apple-tart-39767.herokuapp.com/
+    fetch("http://localhost:5000/getGames", gameOptions)
+      .then((response) => response.json())
+      .then((res1) => {
+        console.log(res1);
+        if (res1.success) {
+          let arr = res1.games
+          setGames(arr);
+        }
+      });
+  },[]);
+  const [gameData, setGameData] = useState([]);
+  const [roomName, setRoomName] = useState("Pallu");
+  const [playRoom, setPlayRoom] = useState(false);
+  const [socketId, setSocketId] = useState("");
   socket.on("room-joined", (message:string) => {
+
     console.log(message)
+    setSocketId(message)
     setPlayRoom(true);
   });
-  const [gameData, setGameData] = useState([]);
-  const [roomName, setRoomName] = useState("");
-  const [playRoom, setPlayRoom] = useState(false);
   useEffect(() => {
     console.log("GameData");
     console.log(gameData);
@@ -49,11 +73,15 @@ const ViewGame = ({ games }:any) => {
     };
     fetch("http://localhost:5000/createRoom", createOption);
     console.log("Sart game", gameData);
-    let roomName = "Pallu"
     socket.emit("create-room", roomName);
   };
   return playRoom ? (
-    <NewGameRoom prop={roomName} />
+      <GameHome
+    isAdmin={true}
+    socketId={socketId}
+    socket={socket}
+    roomName={roomName}
+  />
   ) : (
     <div className="loginPage">
       {/* <ol>

@@ -60,13 +60,14 @@ const Login = (props:any):any => {
           // setUserId(res1.userId);
           console.log(userId);
           setLogin(true);
+          navigate("/profilePage")
         }
       });
   };
-  return login? (
-    <ProfilePage />
-  ) : (
-  <div className="loginPage">
+  // return login? (
+  //   <ProfilePage />
+  // ) : (
+  return (<div className="loginPage">
       <div className="upmargin">
         <h1 className="headingLogin">Login</h1>
       </div>

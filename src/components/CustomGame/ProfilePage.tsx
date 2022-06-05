@@ -24,23 +24,24 @@ const ProfilePage = () => {
     setComp(res);
   }, [games]);
   const viewGame = () => {
-    console.log("View Games");
-    const gameOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify([{ userId: userDetails }]),
-    };
+    navigate("/viewGame");
+    // console.log("View Games");
+    // const gameOptions = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify([{ userId: userDetails }]),
+    // };
 
-    // https://apple-tart-39767.herokuapp.com/
-    fetch("http://localhost:5000/getGames", gameOptions)
-      .then((response) => response.json())
-      .then((res1) => {
-        console.log(res1);
-        if (res1.success) {
-          setGames(res1.games);
-          setViewGames(true);
-        }
-      });
+    // // https://apple-tart-39767.herokuapp.com/
+    // fetch("http://localhost:5000/getGames", gameOptions)
+    //   .then((response) => response.json())
+    //   .then((res1) => {
+    //     console.log(res1);
+    //     if (res1.success) {
+    //       setGames(res1.games);
+    //       setViewGames(true);
+    //     }
+    //   });
   };
   const createGame = () => {
     setCreateGamePage(true);
@@ -59,12 +60,12 @@ const ProfilePage = () => {
     //   });
   };
 
-  return viewGames ? (
-    <ViewGame games={games} />):
+  // return viewGames ? (
+  //   <ViewGame games={games} />):
   // ) : createGamePage ? (
   //   <CreateGame />
   // ) : (
-    (<div className="loginPage">
+  return  (<div className="loginPage">
       {/* <h1> {userDetails} </h1> */}
       <div className="upmargin">
         <h1>Welcome to your profile</h1>

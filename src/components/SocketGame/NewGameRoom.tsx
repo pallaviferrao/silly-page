@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { io } from "socket.io-client";
 import GameHome from "./GameHome";
-const NewGameRoom = ({ prop }:any) => {
+const NewGameRoom = () => {
   const [roomName, setRoomName] = useState("");
   const [message, setMessage] = useState("");
   const [startGame, setStartGame] = useState(false);
@@ -26,11 +26,18 @@ const NewGameRoom = ({ prop }:any) => {
     let room = "";
     // fetch("http://localhost:5000/joinRoom");
     // setRoomName(roomName);
+    const createOption = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify([{}])
+    };
+    fetch("http://localhost:5000/createRoom",createOption);
     socket.emit("join-room", roomName);
   };
   const sendMessage = () => {
     let room = "";
     // setRoomName(roomName);
+    fetch("http://localhost:5000/createRoom");
     socket.emit("sendMessage", roomName);
   };
   return startGame ? (
@@ -42,7 +49,7 @@ const NewGameRoom = ({ prop }:any) => {
     />
   ) : (
     <div>
-      <h1>Hello Socket {prop}</h1>
+      <h1>Hello Socket </h1>
       <div className="upmargin">
         <label>
           Enter Room name

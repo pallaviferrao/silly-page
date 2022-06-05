@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 const GamePage = ({ gameName, gameId }:any) => {
   const [question, setQuestion] = useState([]);
+  let navigate = useNavigate();
   const AddQuestion = (num:any, event:any) => {
     let arr = question;
     console.log(event);
@@ -17,6 +18,10 @@ const GamePage = ({ gameName, gameId }:any) => {
     setQuestion(arr);
     console.log(question);
   };
+
+  const goHome=()=>{
+    navigate("/viewGame");
+  }
   useEffect(() => {
     console.log("UpdatedQuestion", question);
   }, [question]);
@@ -96,6 +101,7 @@ const GamePage = ({ gameName, gameId }:any) => {
         })}
       </div>
       <button onClick={() => submitQuiz()}>Submit Quiz</button>
+      <button onClick={() => goHome()}>Home</button>
     </div>
   );
 };
