@@ -18,7 +18,7 @@ const NewGameRoom = () => {
   // },[roomName])
   const createRoom = () => {
     setIsAdmin(true);
-    fetch("http://localhost:5000/createRoom");
+    fetch("https://apple-tart-39767.herokuapp.com/createRoom");
     // setRoomName(roomName);
     socket.emit("create-room", roomName);
   };
@@ -31,13 +31,13 @@ const NewGameRoom = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify([{}])
     };
-    fetch("http://localhost:5000/createRoom",createOption);
+    fetch("https://apple-tart-39767.herokuapp.com/createRoom",createOption);
     socket.emit("join-room", roomName);
   };
   const sendMessage = () => {
     let room = "";
     // setRoomName(roomName);
-    fetch("http://localhost:5000/createRoom");
+    fetch("https://apple-tart-39767.herokuapp.com/createRoom");
     socket.emit("sendMessage", roomName);
   };
   return startGame ? (

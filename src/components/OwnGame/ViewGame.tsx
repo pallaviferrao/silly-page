@@ -16,7 +16,7 @@ const ViewGame = () => {
     };
 
     // https://apple-tart-39767.herokuapp.com/
-    fetch("http://localhost:5000/getGames", gameOptions)
+    fetch("https://apple-tart-39767.herokuapp.com/getGames", gameOptions)
       .then((response) => response.json())
       .then((res1) => {
         console.log(res1);
@@ -71,7 +71,7 @@ const ViewGame = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify([{ gameData: gameData }]),
     };
-    fetch("http://localhost:5000/createRoom", createOption);
+    fetch("https://apple-tart-39767.herokuapp.com/createRoom", createOption);
     console.log("Sart game", gameData);
     socket.emit("create-room", roomName);
   };
