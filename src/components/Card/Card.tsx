@@ -1,6 +1,6 @@
 import React from "react";
 import "./card.css";
-import picture from "../../assets/images/Super-Optimized-pink.jpg";
+import picture from "../../assets/images/gameimage.jpeg";
 const Card = (props:any):any => {
   return (
     <div className="lolo" onClick={() => props.handleClick()}>

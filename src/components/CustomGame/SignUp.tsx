@@ -29,7 +29,7 @@ const SignUp = ()=>{
                     body: JSON.stringify([{ username: username, password: password }]),
                   };
                 //   https://apple-tart-39767.herokuapp.com
-                  fetch("http://localhost:5000/signup", requestOptions)
+                  fetch("https://apple-tart-39767.herokuapp.com/signup", requestOptions)
                     .then((res) => res.json())
                     .then((res1) => {
                       if (res1.success) {

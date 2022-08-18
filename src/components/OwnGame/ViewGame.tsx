@@ -4,10 +4,11 @@ import { UserContext } from "../Home/Home";
 import { io } from "socket.io-client";
 const socket = io("http://localhost:5000");
 
-
+import './create.css'
 const ViewGame = () => {
   const userDetails = React.useContext(UserContext);
   const [games, setGames] = useState([]);
+  const [roomName,setRoomName] = useState(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))
   useEffect(() => {
     const gameOptions = {
       method: "POST",
@@ -27,7 +28,7 @@ const ViewGame = () => {
       });
   },[]);
   const [gameData, setGameData] = useState([]);
-  const [roomName, setRoomName] = useState("Pallu");
+  // const [roomName, setRoomName] = useState("Pallu");
   const [playRoom, setPlayRoom] = useState(false);
   const [socketId, setSocketId] = useState("");
   socket.on("room-joined", (message:string) => {
@@ -69,11 +70,16 @@ const ViewGame = () => {
     const createOption = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify([{ gameData: gameData }]),
+      body: JSON.stringify([{ gameData: gameData,roomName:roomName }]),
     };
-    fetch("https://apple-tart-39767.herokuapp.com/createRoom", createOption);
-    console.log("Sart game", gameData);
-    socket.emit("create-room", roomName);
+    //https://apple-tart-39767.herokuapp.com/createRoom
+    fetch("http://localhost:5000/createRoomDb", createOption)
+    .then((response) => response.json())
+    .then((res1) => {
+        console.log(res1)
+    });
+    // console.log("Sart game", gameData);
+    // socket.emit("create-room", roomName);
   };
   return playRoom ? (
       <GameHome
@@ -89,12 +95,13 @@ const ViewGame = () => {
           return <li key={element[0]}>{element[1]}</li>;
         })}
       </ol> */}
+      <div>Login is at ---- rhttps://playcustomegame.netlify.com/ room name- {roomName}</div>
       <div>
         {games.map((element:any) => {
           return (
-            <div>
+            <div className="startGameButton">
               <div>{element[1]}</div>
-              <button
+              <button 
                 onClick={() => {
                   AddGame(element[0]);
                 }}
@@ -105,13 +112,15 @@ const ViewGame = () => {
           );
         })}
       </div>
-      <button
+      <div>
+      <button className="startGameButton"
         onClick={() => {
           StartGame();
         }}
       >
         Start Game
       </button>
+      </div>
     </div>
   );
 };

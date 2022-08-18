@@ -34,6 +34,7 @@ const GamePage = ({ gameName, gameId }:any) => {
           gameId: gameId,
           gameName: gameName,
           questions: question,
+          gameType:'Quiz'
         },
       ]),
     };
@@ -45,6 +46,27 @@ const GamePage = ({ gameName, gameId }:any) => {
         // }
       });
   };
+  const addVoting = ()=>{
+    const gameOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify([
+        {
+          gameId: gameId,
+          gameName: gameName,
+          gameType:'Vote'
+        },
+      ]),
+    };
+    //https://apple-tart-39767.herokuapp.com/addGame
+    fetch("http://localhost:5000/addGame", gameOptions)
+      .then((game) => game.json())
+      .then((game) => {
+        // if (game.success) {
+        //   setGameId(game.gameId);
+        // }
+      });
+  }
   const handleQuestions = (num:any) => {
     const size = num.data;
     let arr = [];
@@ -57,6 +79,10 @@ const GamePage = ({ gameName, gameId }:any) => {
   };
   return (
     <div>
+      <div>
+        Add a voting thing
+      </div>
+      <button onClick={addVoting}>Add Voting</button>
       <div>
         <label>
           How many Questions do want?:

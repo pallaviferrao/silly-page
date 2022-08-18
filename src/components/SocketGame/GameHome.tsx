@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 const GameHome = ({ isAdmin, socketId, socket, roomName }:any) => {
   const [message, setMessage] = useState([]);
   const [quiz, setQuiz] = useState([]);
-    const jocket = io("http://localhost:5000");
+    const jocket = io("https://apple-tart-39767.herokuapp.com/");
   // socket.on("hello-message", (message:string) => {
   //   console.log(message);
   //   setMessage(message);
