@@ -20,8 +20,8 @@ const Portfolio = ({text }:Portfolio) => {
   const [displayInfo, setDisplayInfo] = useState(
     text==="home"?<div className="displayArea">
       <h1>Pallavi Ferrao</h1>
-      <h2>Software Developer</h2>
-      <h2>pallaviferrao2004@gmail.com</h2>
+      <h2>Software Engineer</h2>
+      <h2>pallaviferrao@gmail.com</h2>
     </div>:aboutMe
   );
   return (

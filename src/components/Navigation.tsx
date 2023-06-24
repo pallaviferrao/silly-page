@@ -19,7 +19,7 @@ const Navigation = () => {
   return (
     <div className="navigation">
       <a onClick={handleNavigateHome}> Home </a>
-      <a onClick={handleNavigateGames}> Games </a>
+      <a onClick={handleNavigateGames}> Projects </a>
       {/* <a onClick={handleNavigateAboutMe}> About Me </a> */}
       <a href="https://www.linkedin.com/in/pallavi-ferrao/" target="_blank">
         Linked In
