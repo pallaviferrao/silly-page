@@ -13,14 +13,13 @@
       direction: column;
       font-family: 'Great Vibes', cursive;
       padding: 1em;
-      background-color: rgb(248, 238, 225);
-      
+      background-color: #598BAF
     }
     a{
-      color: #a52b54;
+      color: black;
      text-decoration: none;
      cursor: pointer;
    }
    a:hover{
-    color: purple;
+    color: #f2f2f2;
    }

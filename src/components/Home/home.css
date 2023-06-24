@@ -18,7 +18,7 @@
     font-size: 2rem;
 }
 .container{
-  background-color: rgb(251, 176, 76);
+  background-color: #f2f2f2;
   width:100%;
   height: 100%;
   font-size: 1.1rem;
@@ -26,7 +26,7 @@
   /* padding: 3em; */
 }
 .circle-bg{
-  background-color: #f17f66;
+  background-color: 	#598BAF;
   margin: 0px;
 }
 .row{
@@ -92,7 +92,7 @@ img{
 }
 
 .circle-bg{
- background-color: #f17f66;
+ background-color: 	#598BAF;
 }
 
 .centre-horizontal{
