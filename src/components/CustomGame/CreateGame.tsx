@@ -17,8 +17,8 @@ const CreateGame = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify([{ userId: userDetails, gameName: gameName }]),
     };
-    // https://apple-tart-39767.herokuapp.com/
-    fetch("http://localhost:5000/createGame", gameOptions)
+    // https://customgame.onrender.com/
+    fetch("https://customgame.onrender.com/createGame", gameOptions)
       .then((game) => game.json())
       .then((game) => {
         if (game.success) {

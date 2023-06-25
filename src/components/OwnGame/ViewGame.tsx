@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import GameHome from "../SocketGame/GameHome";
 import { UserContext } from "../Home/Home";
 import { io } from "socket.io-client";
-const socket = io("http://localhost:5000");
+const socket = io("https://customgame.onrender.com/");
 
 import './create.css'
 const ViewGame = () => {
@@ -17,7 +17,7 @@ const ViewGame = () => {
     };
 
     // https://apple-tart-39767.herokuapp.com/
-    fetch("https://apple-tart-39767.herokuapp.com/getGames", gameOptions)
+    fetch("https://customgame.onrender.com/getGames", gameOptions)
       .then((response) => response.json())
       .then((res1) => {
         console.log(res1);
@@ -49,7 +49,7 @@ const ViewGame = () => {
       body: JSON.stringify([{ gameId: id }]),
     };
     // https://apple-tart-39767.herokuapp.com/
-    fetch("https://apple-tart-39767.herokuapp.com/getGame", gameOptions)
+    fetch("https://customgame.onrender.com/getGame", gameOptions)
       .then((response) => response.json())
       .then((res1) => {
         console.log(res1);
@@ -73,7 +73,7 @@ const ViewGame = () => {
       body: JSON.stringify([{ gameData: gameData,roomName:roomName }]),
     };
     //https://apple-tart-39767.herokuapp.com/createRoom
-    fetch("http://localhost:5000/createRoomDb", createOption)
+    fetch("https://customgame.onrender.com/createRoomDb", createOption)
     .then((response) => response.json())
     .then((res1) => {
         console.log(res1)

@@ -38,7 +38,7 @@ const GamePage = ({ gameName, gameId }:any) => {
         },
       ]),
     };
-    fetch("https://apple-tart-39767.herokuapp.com/addGame", gameOptions)
+    fetch("https://customgame.onrender.com/addGame", gameOptions)
       .then((game) => game.json())
       .then((game) => {
         // if (game.success) {
@@ -59,7 +59,29 @@ const GamePage = ({ gameName, gameId }:any) => {
       ]),
     };
     //https://apple-tart-39767.herokuapp.com/addGame
-    fetch("http://localhost:5000/addGame", gameOptions)
+    //https://customgame.onrender.com/
+    fetch("https://customgame.onrender.com/addGame", gameOptions)
+      .then((game) => game.json())
+      .then((game) => {
+        // if (game.success) {
+        //   setGameId(game.gameId);
+        // }
+      });
+  }
+  const addPoints = ()=>{
+    const gameOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify([
+        {
+          gameId: gameId,
+          gameName: gameName,
+          gameType:'Points'
+        },
+      ]),
+    }
+      //https://customgame.onrender.com/
+      fetch("https://customgame.onrender.com/addGame", gameOptions)
       .then((game) => game.json())
       .then((game) => {
         // if (game.success) {
@@ -80,9 +102,17 @@ const GamePage = ({ gameName, gameId }:any) => {
   return (
     <div>
       <div>
-        Add a voting thing
+        <div>
+          Add a section to vote out people.
+        </div>
+        <button onClick={addVoting}>Add Voting</button>
       </div>
-      <button onClick={addVoting}>Add Voting</button>
+      <div>
+        <div>
+          Play an externa game and add points
+        </div>
+        <button onClick={addPoints}>Add Points</button>
+      </div>
       <div>
         <label>
           How many Questions do want?:

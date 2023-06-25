@@ -51,7 +51,7 @@ const Login = (props:any):any => {
       body: JSON.stringify([{ username: username, password: password }]),
     };
 
-    fetch("https://apple-tart-39767.herokuapp.com/login", requestOptions)
+    fetch("https://customgame.onrender.com/login", requestOptions)
       .then((res) => res.json())
       .then((res1) => {
         if (res1.success) {

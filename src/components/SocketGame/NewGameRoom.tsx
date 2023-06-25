@@ -7,7 +7,7 @@ const NewGameRoom = () => {
   const [startGame, setStartGame] = useState(false);
   const [yourName, setYourName] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
-  const socket = io("http://localhost:5000");
+  const socket = io("https://customgame.onrender.com/");
   socket.on("room-joined", (message:string) => {
     setMessage(message);
     setStartGame(true);
@@ -31,13 +31,13 @@ const NewGameRoom = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify([{}])
     };
-    fetch("https://apple-tart-39767.herokuapp.com/createRoom",createOption);
+    fetch("https://customgame.onrender.com/createRoom",createOption);
     socket.emit("join-room", roomName);
   };
   const sendMessage = () => {
     let room = "";
     // setRoomName(roomName);
-    fetch("https://apple-tart-39767.herokuapp.com/createRoom");
+    fetch("https://customgame.onrender.com/createRoom");
     socket.emit("sendMessage", roomName);
   };
   return startGame ? (

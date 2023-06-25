@@ -28,8 +28,8 @@ const SignUp = ()=>{
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify([{ username: username, password: password }]),
                   };
-                //   https://apple-tart-39767.herokuapp.com
-                  fetch("https://apple-tart-39767.herokuapp.com/signup", requestOptions)
+                //   https://customgame.onrender.com/
+                  fetch("https://customgame.onrender.com/signup", requestOptions)
                     .then((res) => res.json())
                     .then((res1) => {
                       if (res1.success) {
