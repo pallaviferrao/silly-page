@@ -95,7 +95,8 @@ const ViewGame = () => {
           return <li key={element[0]}>{element[1]}</li>;
         })}
       </ol> */}
-      <div>Login is at ---- rhttps://playcustomegame.netlify.com/ room name- {roomName}</div>
+      <div>Login is at ---- https://playcustomgame.netlify.com/ </div>
+      <div> Room name- {roomName}</div>
       <div>
         {games.map((element:any) => {
           return (
