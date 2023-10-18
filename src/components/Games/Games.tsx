@@ -24,6 +24,9 @@ const Games = () => {
   const handlePokemonGame =()=>{
     window.open("https://pokedex-pallaviferrao.netlify.app/");
   }
+  const handleMyStory = ()=>{
+    window.open("https://pallaviferrao-girl.blogspot.com/");
+  }
   return (
     <>
       {" "}
@@ -81,7 +84,7 @@ const Games = () => {
                   title="Girl"
                   description="Personal experiences"
                   buttonTitle="Read my stories"
-                  handleClick={handleMemoryGame}
+                  handleClick={handleMyStory}
                 ></Card>
               );
             }}
