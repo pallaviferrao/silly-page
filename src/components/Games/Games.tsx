@@ -87,48 +87,6 @@ const Games = () => {
             }}
           ></WhiteCard>
         </div>
-        <div>
-          <WhiteCard
-            render={() => {
-              return (
-                <Card
-                  title="GRE Prep"
-                  description="Get help with gre prep"
-                  buttonTitle="Read my stories"
-                  handleClick={handleMemoryGame}
-                ></Card>
-              );
-            }}
-          ></WhiteCard>
-        </div>
-        <div>
-          <WhiteCard
-            render={() => {
-              return (
-                <Card
-                  title="Heart Attack detection"
-                  description="Detect heart attacks"
-                  buttonTitle="A Project"
-                  handleClick={handleMemoryGame}
-                ></Card>
-              );
-            }}
-          ></WhiteCard>
-        </div>
-        <div>
-          <WhiteCard
-            render={() => {
-              return (
-                <Card
-                  title="Analysis Projects"
-                  description="Analyse Data and learn AI models"
-                  buttonTitle="A Project"
-                  handleClick={handleMemoryGame}
-                ></Card>
-              );
-            }}
-          ></WhiteCard>
-        </div>
       </div>
     </>
   );
