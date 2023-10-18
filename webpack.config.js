@@ -90,7 +90,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: "disabled",
+    }),
   ],
   devServer: {
     host: "localhost",
