@@ -1,6 +1,5 @@
 {
   "name": "silly-page",
-  "packageManager": "yarn@3.2.2",
   "scripts": {
     "start": "webpack serve --mode development",
     "test": "jest",
