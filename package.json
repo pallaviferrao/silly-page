@@ -8,6 +8,7 @@
     "dev": "webpack serve",
     "build-dev": "webpack",
     "prebuild": "rimraf dist",
+    "buildstart": "cross-env NODE_ENV=production webpack --mode production --config webpack.config.production.js && webpack serve --mode production",
     "dev:analyze": "npm run dev -- --env.addons=bundleanalyzer",
     "build": "cross-env NODE_ENV=production webpack --mode production --config webpack.config.production.js"
   },
