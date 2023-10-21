@@ -125,9 +125,7 @@ const ViewGame = () => {
       </button>
       <div>
         <p>Games Added</p>
-        {gameNames.map((name,ind)=>{
-          return(<div>{name}</div>)
-        })}
+        {gameNames}
       </div>
       </div>
     </div>
