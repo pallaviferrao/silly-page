@@ -109,7 +109,7 @@ const GamePage = ({ gameName, gameId }:any) => {
         </div>
         <button onClick={addVoting}>Add Voting to your game</button>
       </div>
-      <div>
+      <div className="extnalPoints">
         <div>
         <br></br>
           Play an external game and add points
@@ -131,7 +131,7 @@ const GamePage = ({ gameName, gameId }:any) => {
       <div>
         {question.map((element, index) => {
           return (
-            <div>
+            <div className="questions">
               <div>
                 <label>
                   Question {index + 1}
