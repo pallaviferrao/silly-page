@@ -45,6 +45,7 @@ const GamePage = ({ gameName, gameId }:any) => {
         // if (game.success) {
         //   setGameId(game.gameId);
         // }
+        navigate("/viewGame");
       });
   };
   const addVoting = ()=>{
@@ -67,6 +68,7 @@ const GamePage = ({ gameName, gameId }:any) => {
         // if (game.success) {
         //   setGameId(game.gameId);
         // }
+        navigate("/viewGame");
       });
   }
   const addPoints = ()=>{
@@ -88,6 +90,7 @@ const GamePage = ({ gameName, gameId }:any) => {
         // if (game.success) {
         //   setGameId(game.gameId);
         // }
+        navigate("/viewGame");
       });
   }
   const handleQuestions = (num:any) => {
