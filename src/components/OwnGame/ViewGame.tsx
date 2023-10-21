@@ -134,7 +134,7 @@ const ViewGame = () => {
       <div>
         <div>{gameNames}</div>
       </div>
-      <div>
+      <div className="startGameButton">
       <button onClick={() => {
           homepage();
         }}> Go Home</button>
