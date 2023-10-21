@@ -62,7 +62,7 @@ const ViewGame = () => {
           console.log("Games", res1.games[0]);
 
           a.push(res1.games[0]);
-          gameNameList.concat(", ", res1.games[0][1].gameName.toString());
+          gameNameList = gameNameList + "," + res1.games[0][1].gameName.toString()
           setGameNames(gameNameList);
           console.log(gameNames)
           console.log(a);
@@ -134,9 +134,11 @@ const ViewGame = () => {
       <div>
         <div>{gameNames}</div>
       </div>
+      <div>
       <button onClick={() => {
           homepage();
         }}> Go Home</button>
+        </div>
       </div>
     </div>
   );
