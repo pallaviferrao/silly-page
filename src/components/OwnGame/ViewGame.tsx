@@ -55,11 +55,13 @@ const ViewGame = () => {
       .then((res1) => {
         console.log(res1);
         if (res1.success) {
+          let gameNameList = gameNames;
           let a = gameData;
           console.log("Games", res1.games[0]);
 
           a.push(res1.games[0]);
-          gameNames.push(res1.games[0][1].gameName)
+          gameNameList.push(res1.games[0][1].gameName);
+          setGameNames(gameNameList);
           console.log(a);
           // fetch("http://localhost:5000/createRoom", createOption);
           setGameData(a);
