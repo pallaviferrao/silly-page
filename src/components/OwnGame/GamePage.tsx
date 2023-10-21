@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./create.css";
 const GamePage = ({ gameName, gameId }:any) => {
   const [question, setQuestion] = useState([]);
   let navigate = useNavigate();
@@ -100,21 +101,24 @@ const GamePage = ({ gameName, gameId }:any) => {
     console.log(question);
   };
   return (
-    <div>
+    <div className="gamepage">
       <div>
         <div>
+          <br></br>
           Add a section to vote out people.
         </div>
         <button onClick={addVoting}>Add Voting to your game</button>
       </div>
-      <div>
+      <div className="extnalPoints">
         <div>
+        <br></br>
           Play an external game and add points
         </div>
         <button onClick={addPoints}>Add Points</button>
       </div>
       <div>
         <label>
+        <br></br>
           How many Questions do want?:
           <input
             type="number"
@@ -127,7 +131,7 @@ const GamePage = ({ gameName, gameId }:any) => {
       <div>
         {question.map((element, index) => {
           return (
-            <div>
+            <div className="questions">
               <div>
                 <label>
                   Question {index + 1}
@@ -156,9 +160,13 @@ const GamePage = ({ gameName, gameId }:any) => {
           );
         })}
       </div>
-      <button onClick={() => submitQuiz()}>Submit Quiz</button>
+      <div>
+        <button onClick={() => submitQuiz()}>Submit Quiz</button>
+      </div>
       <br/>
-      <button onClick={() => goHome()}>Home</button>
+      <div>
+        <button onClick={() => goHome()}>Home</button>
+      </div>
     </div>
   );
 };
