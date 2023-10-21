@@ -126,12 +126,12 @@ const ViewGame = () => {
       >
         Start Game
       </button>
+      <p>Games Added</p>
       <div>
-        <p>Games Added</p>
-        {gameNames.map((name,ind)=>{
-          return(<div>{name}</div>)
+        {gameNames.map((name)=>{
+          return <div>{name}</div>
         })}
-        {gameNames}
+        <div>{gameNames}</div>
       </div>
       </div>
     </div>
