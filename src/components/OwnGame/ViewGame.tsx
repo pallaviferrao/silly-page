@@ -28,6 +28,7 @@ const ViewGame = () => {
       });
   },[]);
   const [gameData, setGameData] = useState([]);
+  const [gameNames, setGameNames] = useState([]);
   // const [roomName, setRoomName] = useState("Pallu");
   const [playRoom, setPlayRoom] = useState(false);
   const [socketId, setSocketId] = useState("");
@@ -58,6 +59,7 @@ const ViewGame = () => {
           console.log("Games", res1.games[0]);
 
           a.push(res1.games[0]);
+          gameNames.push(res1.games[0][1].gameName)
           console.log(a);
           // fetch("http://localhost:5000/createRoom", createOption);
           setGameData(a);
@@ -121,6 +123,12 @@ const ViewGame = () => {
       >
         Start Game
       </button>
+      <div>
+        <p>Games Added</p>
+        {gameNames.map((name,ind)=>{
+          return(<div>{name}</div>)
+        })}
+      </div>
       </div>
     </div>
   );
