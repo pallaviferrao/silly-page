@@ -28,7 +28,7 @@ const ViewGame = () => {
       });
   },[]);
   const [gameData, setGameData] = useState([]);
-  const [gameNames, setGameNames] = useState([]);
+  const [gameNames, setGameNames] = useState("");
   // const [roomName, setRoomName] = useState("Pallu");
   const [playRoom, setPlayRoom] = useState(false);
   const [socketId, setSocketId] = useState("");
@@ -60,7 +60,7 @@ const ViewGame = () => {
           console.log("Games", res1.games[0]);
 
           a.push(res1.games[0]);
-          gameNameList.push(res1.games[0][1].gameName);
+          gameNameList.concat(", ", res1.games[0][1].gameName);
           setGameNames(gameNameList);
           console.log(gameNames)
           console.log(a);
@@ -128,9 +128,6 @@ const ViewGame = () => {
       </button>
       <p>Games Added</p>
       <div>
-        {gameNames.map((name)=>{
-          return <div>{name}</div>
-        })}
         <div>{gameNames}</div>
       </div>
       </div>
