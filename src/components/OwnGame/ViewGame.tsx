@@ -62,6 +62,7 @@ const ViewGame = () => {
           a.push(res1.games[0]);
           gameNameList.push(res1.games[0][1].gameName);
           setGameNames(gameNameList);
+          console.log(gameNames)
           console.log(a);
           // fetch("http://localhost:5000/createRoom", createOption);
           setGameData(a);
@@ -130,6 +131,7 @@ const ViewGame = () => {
         {gameNames.map((name,ind)=>{
           return(<div>{name}</div>)
         })}
+        {gameNames}
       </div>
       </div>
     </div>
