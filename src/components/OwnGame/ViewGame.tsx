@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import GameHome from "../SocketGame/GameHome";
 import { UserContext } from "../Home/Home";
 import { io } from "socket.io-client";
+import { useNavigate } from "react-router-dom";
 const socket = io("https://customgame.onrender.com/");
 
 import './create.css'
@@ -28,7 +29,8 @@ const ViewGame = () => {
       });
   },[]);
   const [gameData, setGameData] = useState([]);
-  const [gameNames, setGameNames] = useState("");
+  const [gameNames, setGameNames] = useState(" ");
+  let navigate = useNavigate();
   // const [roomName, setRoomName] = useState("Pallu");
   const [playRoom, setPlayRoom] = useState(false);
   const [socketId, setSocketId] = useState("");
@@ -60,7 +62,7 @@ const ViewGame = () => {
           console.log("Games", res1.games[0]);
 
           a.push(res1.games[0]);
-          gameNameList.concat(", ", res1.games[0][1].gameName);
+          gameNameList.concat(", ", res1.games[0][1].gameName.toString());
           setGameNames(gameNameList);
           console.log(gameNames)
           console.log(a);
@@ -71,6 +73,9 @@ const ViewGame = () => {
         }
       });
   };
+  const homepage = () =>{
+    navigate("/profilePage");
+  }
   const StartGame = () => {
     const createOption = {
       method: "POST",
@@ -126,10 +131,12 @@ const ViewGame = () => {
       >
         Start Game
       </button>
-      <p>Games Added</p>
       <div>
         <div>{gameNames}</div>
       </div>
+      <button onClick={() => {
+          homepage();
+        }}> Go Home</button>
       </div>
     </div>
   );
