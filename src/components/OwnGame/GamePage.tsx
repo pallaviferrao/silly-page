@@ -105,11 +105,11 @@ const GamePage = ({ gameName, gameId }:any) => {
         <div>
           Add a section to vote out people.
         </div>
-        <button onClick={addVoting}>Add Voting</button>
+        <button onClick={addVoting}>Add Voting to your game</button>
       </div>
       <div>
         <div>
-          Play an externa game and add points
+          Play an external game and add points
         </div>
         <button onClick={addPoints}>Add Points</button>
       </div>
@@ -157,6 +157,7 @@ const GamePage = ({ gameName, gameId }:any) => {
         })}
       </div>
       <button onClick={() => submitQuiz()}>Submit Quiz</button>
+      <br/>
       <button onClick={() => goHome()}>Home</button>
     </div>
   );
