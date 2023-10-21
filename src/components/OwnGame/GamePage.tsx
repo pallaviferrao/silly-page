@@ -128,10 +128,10 @@ const GamePage = ({ gameName, gameId }:any) => {
         </label>
       </div>
 
-      <div>
+      <div className="questions">
         {question.map((element, index) => {
           return (
-            <div className="questions">
+            <div >
               <div>
                 <label>
                   Question {index + 1}
