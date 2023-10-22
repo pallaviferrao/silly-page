@@ -98,6 +98,9 @@ const Login = (props:any):any => {
         <button onClick={() => handleLogin()}>Login</button>
         <button onClick={() => handleSubmit()}>Sign Up</button>
       </div>
+      <div>
+        <a href="https://drive.google.com/drive/folders/13zaNz7rMnif3iLokSVv2zez4L5v9z8f-">Watch demo videos</a>
+      </div>
       {/* <h1>{errorMessage}</h1> */}
     </div>
   )
