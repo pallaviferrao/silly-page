@@ -11,7 +11,7 @@ import Login from "../CustomGame/Login"
 import ProfilePage from "../CustomGame/ProfilePage";
 // import CustomGame from "../CustomGame/CustomGame";
 import MagicRecipe from "../MagicRecipe/MagicRecipe";
-import picture from "../../assets/images/Small-Pink.jpg";
+import picture from "../../assets/images/pallavi.jpg";
 import NewGameRoom from "../SocketGame/NewGameRoom";
 import BracketGame from "../BracketGame/BracketGame"
 import { lazy,Suspense } from "react";
