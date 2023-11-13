@@ -99,7 +99,10 @@ const Login = (props:any):any => {
         <button onClick={() => handleSubmit()}>Sign Up</button>
       </div>
       <div>
-        <a href="https://drive.google.com/drive/folders/13zaNz7rMnif3iLokSVv2zez4L5v9z8f-">Watch demo videos</a>
+        <a href="https://drive.google.com/drive/folders/13zaNz7rMnif3iLokSVv2zez4L5v9z8f-">
+          <br/>
+          <h2>Watch demo videos on how to use this application</h2>
+          </a>
       </div>
       {/* <h1>{errorMessage}</h1> */}
     </div>
